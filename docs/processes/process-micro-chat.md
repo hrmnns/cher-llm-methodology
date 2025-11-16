@@ -375,19 +375,107 @@ Die Ergebnissicherung ist keine einmalige Aktion, sondern läuft parallel und be
 ## Phase D – Übergabe ins Repository
 
 ### Ziel der Phase
-<!-- Sicherstellen, dass relevante Ergebnisse ins Repo überführt werden -->
+
+Die Übergabephase stellt sicher, dass die im Chat erarbeiteten Ergebnisse korrekt, vollständig und konsistent in das Repository übertragen werden. Sie bildet die Brücke von der Chat-Arbeit in die dauerhafte Dokumentation des Projekts.
+
+Ziel ist es, Ergebnisse so aufzubereiten, dass sie sauber versioniert, wiederauffindbar und im Gesamtprozess verwertbar sind.
+
+Relevanz der Phase / Warum dieser Schritt wichtig ist:
+
+ * Die Übergabephase sorgt dafür, dass aus Chat-Ergebnissen echte, dauerhafte Projektergebnisse werden.
+ * Ohne diese Phase würden wichtige Erkenntnisse im Chatverlauf verloren gehen und müssten später erneut erarbeitet werden.
+ * Sie stellt sicher, dass das Repository jederzeit den aktuellen Wissensstand widerspiegelt und als „Single Source of Truth“ funktioniert.
+ * Sie schützt das Projekt davor, dass Inkonsistenzen, Doppelstände oder veraltete Informationen entstehen.
+ * Die Phase zwingt dazu, Inhalte zu prüfen und zu konsolidieren, bevor sie festgeschrieben werden — ein zentraler Qualitätsfilter.
+ * Sie schafft klare Nachvollziehbarkeit: Was ist wie entstanden, was wurde übernommen und warum?
+ * Sie trennt bewusst zwischen „Arbeiten im Chat“ und „Dokumentation im Projekt“, damit beides seinen Platz hat.
+
+Kurz: Ohne Phase D wären die Ergebnisse aus Phase A–C wertlos oder zumindest nicht nachhaltig nutzbar.
 
 ### Einstieg / Trigger
-<!-- Wenn Inhalte stabil und als „repo-relevant“ identifiziert sind -->
+
+Diese Phase beginnt immer dann, wenn:
+
+* ein Ergebnisblock als „final“ oder „stabil genug“ gekennzeichnet wurde,
+* der Chat ein Ziel erreicht hat, das in einer Datei dokumentiert werden soll,
+* ein Issue erstellt, aktualisiert oder geschlossen werden muss,
+* eine Ergänzung im Prozess-, Meta- oder Planungsdokument erforderlich ist,
+* oder ein Zwischenergebnis wichtig genug ist, um festgehalten zu werden.
+
+Die Übergabe findet immer **bewusst** statt — niemals implizit.
 
 ### Schritte in der Phase
-<!-- Wo kommt was hin? (docs/, Issues, ggf. Wiki), wie werden Verweise gesetzt -->
 
-### Ergebnisse / Artefakte
-<!-- aktualisierte Dateien, neue Issues, Verlinkungen -->
+1. **Relevante Ergebnisse auswählen**\
+Der Prompt-Autor entscheidet, welche Ergebnisblöcke in dieser Phase übertragen werden sollen. Nicht alles muss ins Repository, nur das, was im Gesamtprozess benötigt wird.
 
-### Beispiel
-<!-- Beispiel für eine Übernahme in eine .md-Datei und ein Issue -->
+2. **Zielort im Repository bestimmen**\
+Für jedes Ergebnis wird festgelegt, wo es hingehört: in ein spezifisches Dokument unter „docs“, als neues Issue, als Kommentar in einem Issue oder in ein bestehendes Prozessdokument.
+
+3. **Ergebnisblöcke aufbereiten**\
+Inhalte werden, falls nötig, leicht bereinigt oder konsolidiert, damit sie konsistent und vollständig in die Zieldatei passen. Ziel ist Klarheit, nicht kosmetische Detailarbeit.
+
+4. **Übertragung ins Repository durchführen**\
+Das Ergebnis wird in einer Datei ergänzt, eine vorhandene Datei wird aktualisiert oder ein Issue wird erstellt bzw. geschlossen. Der Prompt-Autor stellt sicher, dass Formatierung, Struktur und Kontext stimmen.
+
+5. **Verweis erstellen oder aktualisieren**\
+Wenn sinnvoll, werden interne Verknüpfungen gesetzt: Verweise zwischen Dokumenten, Querverweise zwischen Issues, Hinweise auf Process-Makro- oder Micro-Dokumente.
+
+6. **Überprüfung der Übergabe**\
+Der Prompt-Autor prüft kurz, ob alles korrekt übertragen wurde und ob die Änderungen in den Gesamtkontext passen. Erst dann endet die Phase.
+
+### Was der Prompt-Autor in dieser Phase tun muss (Kernverantwortungen)
+
+* Sorgfältig auswählen, welche Inhalte tatsächlich repository-relevant sind.
+* Die richtige Ablageposition im Repo bestimmen — orientiert an Struktur und Informationsarchitektur.
+* Ergebnisblöcke sauber, vollständig und in der richtigen Version übernehmen.
+* Darauf achten, dass Links, Referenzen und Kontextinformationen stimmen.
+* Bei Issues für klare Titel, verständliche Beschreibungen und eindeutige Zuordnungen sorgen.
+* Nach der Übernahme eine Qualitätssicherung durchführen, um Inkonsistenzen zu vermeiden.
+* Sicherstellen, dass das Repository stets den „Single Source of Truth“-Charakter behält.
+
+### Worauf der Prompt-Autor besonders achten muss (Critical Points)
+
+* **Nur saubere Ergebnisblöcke übernehmen.**\
+  Inhalte dürfen erst dann übertragen werden, wenn sie in Phase C klar markiert, vollständig und durchgesehen wurden.\
+  Beispiel: „Zwischenergebnis C.3 – stabil“ ist übergabefähig; ein unmarkierter Chatabschnitt nicht.
+
+* **Der Ablageort muss exakt stimmen.**\
+  Falsch abgelegte Inhalte stören die Informationsarchitektur.\
+  Beispiel: Prozessschritte gehören in Prozessdokumente, nicht in Planung oder Meta.
+
+* **Keine Rohentwürfe im Repository.**\
+  Das Repo speichert Ergebnisse — nicht den Entstehungsweg.\
+  Beispiel: Varianten, die verworfen wurden, bleiben im Chat, nicht im Repo.
+
+* **Versionen eindeutig halten.**\
+  Wenn ein Ergebnisfinalstand übertragen wird, sollte klar sein, welche Version es ist.\
+  Beispiel: „Phase A – Version 0.2 – final“.
+
+* **Issues korrekt pflegen.**\
+  Neue Erkenntnisse müssen über Issues dokumentiert, zugewiesen oder abgeschlossen werden.\
+  Beispiel: Ein neuer Klärpunkt → neues Issue mit klarer Beschreibung.
+
+* **Keine Überfrachtung des Repos.**\
+  Nur relevante, stabile Inhalte gehören hinein — nicht jede Idee oder Zwischennotiz.
+
+### Ergebnisse und Artefakte
+
+* Überarbeitete oder neu erstellte Inhalte, die korrekt in das passende Repository-Dokument eingefügt wurden und dort den aktuellen Projektstand widerspiegeln.
+* Klar benannte und sauber abgegrenzte Ergebnisblöcke, die aus der Chat-Arbeit hervorgegangen sind und nun dauerhaft im Projektkontext nutzbar sind.
+* Ggf. neu erstellte Issues oder aktualisierte bestehende Issues, die genau dokumentieren, welche Entscheidung getroffen wurde oder welche Aufgabe sich aus dem Chat ergibt.
+* Konsolidierte Textabschnitte, die vom Prompt-Autor bewusst aufbereitet wurden, um sie ohne Chat-Metadaten oder überflüssige Erläuterungen in das Repository zu übernehmen.
+* Ergänzte oder aktualisierte Verlinkungen zwischen Dokumenten und Issues, die helfen, den Gesamtzusammenhang des Projektes nachvollziehbar zu halten.
+* Ein insgesamt konsistenter Repository-Zustand, in dem klar ersichtlich ist, welche Erkenntnisse aus welchem Chat übernommen wurden und wie sie sich in das Gesamtprojekt einfügen.
+
+### Beispiel für eine Übergabe ins Repository
+
+* Der Prompt-Autor stellt fest, dass ein bestimmter Ergebnisblock aus Phase C nun wirklich tragfähig ist. Das kann zum Beispiel ein ausgearbeiteter Abschnitt, eine Struktur oder eine Definition sein, die für das Projekt eine dauerhafte Bedeutung hat.
+* Er entscheidet zunächst bewusst, **wo** dieses Ergebnis hingehört. Etwa: „Dieser Abschnitt ist Teil des Mikroprozesses — er gehört in die Datei `process-micro-chat.md` unter Phase A.“
+* Danach bittet er das LLM, den Ergebnisblock bei Bedarf noch einmal leicht zu glätten oder zu konsolidieren, damit er sauber und ohne Chat-Metaanteile in das Repository übernommen werden kann.
+* Anschließend fügt der Prompt-Autor diesen Block an der richtigen Stelle in die Datei ein, ergänzt bei Bedarf eine kurze Einordnung („dieser Abschnitt wurde im Rahmen von Issue #12 erstellt“) und prüft, ob das Dokument insgesamt weiterhin schlüssig strukturiert bleibt.
+* Falls das Ergebnis Auswirkungen auf andere Dokumente oder Aufgaben hat, wird ein neues Issue erstellt oder ein bestehendes Issue aktualisiert. Beispiel: „Phase A ist nun final ausgearbeitet“ oder „Für Phase B muss ein Folge-Chat gestartet werden.“
+* Zum Abschluss überprüft der Prompt-Autor, ob alle relevanten Links funktionieren, ob der Stil konsistent ist und ob der Abschnitt logisch im Dokumentkontext sitzt. Danach gilt die Übergabe als abgeschlossen.
 
 ## Phase E – Chat-Abschluss
 
