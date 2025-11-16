@@ -14,8 +14,6 @@ Dieser Mikroprozess beschreibt den Ablauf eines einzelnen Chats im Rahmen der Ar
 - [ ] Checkliste für Chat-Abschluss
 - [ ] Verweis auf Templates (Start-Block, Abschluss-Block)
 
----
-
 ## Inhaltsverzeichnis
 
 <!-- automatisches oder manuelles TOC, je nach Renderumgebung -->
@@ -162,25 +160,106 @@ Explizite Fokusgrenzen (optional):
 Dieser Chat umfasst ausschließlich Phase A.
 ```
 
-
-
-
 ## Phase B – Strukturierter Arbeitszyklus
 
 ### Ziel der Phase
-<!-- Ziel der iterativen Zusammenarbeit inhaltlich -->
+
+In dieser Phase findet die eigentliche inhaltliche Arbeit statt.
+Der strukturierte Arbeitszyklus sorgt dafür, dass der Chat nicht unkontrolliert verläuft, sondern in klar abgegrenzten Schritten, Iterationen und Ebenenwechseln geführt wird.
+Ziel ist es, innerhalb des definierten Rahmens systematisch Ergebnisse zu erarbeiten, zu prüfen und schrittweise zu verfeinern.
 
 ### Einstieg / Trigger
-<!-- Übergang vom Start in die operative Arbeit -->
+
+Die Phase beginnt, sobald der Start-Prompt vollständig formuliert und bestätigt ist.
+Das LLM hat Rollen und Modus verstanden, der Mensch hat Ziel und Fokus definiert – damit kann der operative Teil beginnen.
 
 ### Schritte in der Phase
-<!-- Fokus klären, Auftrag formulieren, Ergebnis reviewen, Iterationen, Ebenenwechsel -->
 
-### Ergebnisse / Artefakte
-<!-- Zwischenstände, benannte Versionen, markierte „finale“ Blöcke -->
+1. **Fokus klären**
+   Zu Beginn eines Arbeitszyklus präzisiert der Prompt-Autor, worauf sich der nächste Schritt konzentrieren soll. Das kann ein Abschnitt, Unterthema, eine Frage oder ein Teilziel sein.
 
-### Beispiel
-<!-- Kurzer Beispiel-Ausschnitt eines typischen Iterationszyklus -->
+2. **Auftrag formulieren**
+   Der Prompt-Autor erzeugt einen klaren Prompt, der beschreibt, was das LLM tun soll: Ideen entwickeln, strukturieren, textuell ausarbeiten, bewerten, vergleichen etc. Der Auftrag ist kurz, präzise und entspricht dem aktuellen Modus.
+
+3. **Ergebnis prüfen und rückkoppeln**
+   Das LLM liefert ein Ergebnis, das der Prompt-Autor prüft: auf Qualität, Passung, Logik, Vollständigkeit und Konsistenz mit dem Ziel des Chats. Anschließend erfolgt Feedback oder Nachschärfung.
+
+4. **Iterationen durchführen**
+   Der Prompt-Autor entscheidet nach jeder Rückkopplung, ob:
+   – ein weiterer Zyklus zur Verfeinerung nötig ist,
+   – ein Ebenenwechsel sinnvoll ist,
+   – das Ergebnis stabil genug ist, um den Abschnitt abzuschließen.
+
+5. **Ebenenwechsel explizit machen**
+   Wenn von Struktur- auf Inhaltebene, oder von Grob- zu Feindetail gewechselt wird, sagt der Prompt-Autor das ausdrücklich an. Dies verhindert Vermischungen und sorgt für Klarheit im Arbeitsstil.
+
+6. **Zwischenergebnisse markieren**
+   Sobald ein Ergebnis stabil erscheint, wird es benannt (z. B. „Zwischenergebnis A“), dokumentiert und als Grundlage für weitere Schritte verwendet.
+
+### Was der Prompt-Autor in dieser Phase tun muss (Kernverantwortungen)
+
+* Den Arbeitsfokus bewusst steuern, statt ihn dem LLM zu überlassen.
+* Aufträge in Form kurzer, klarer Prompts formulieren („Bitte strukturiere…“, „Bitte überprüfe…“).
+* Ergebnisse kritisch prüfen und gezielt nachschärfen.
+* Disziplin bei Ebenenwechseln halten (nie Inhalte, Struktur und Formulierungen gleichzeitig bearbeiten).
+* Relevante Zwischenergebnisse rechtzeitig sichern und benennen.
+* Themen driftenden Tendenzen sofort korrigieren („Zurück zum Fokus…“).
+* Den Arbeitsprozess aktiv moderieren – er ist nicht selbstlaufend.
+
+### Worauf der Prompt-Autor besonders achten muss (Critical Points):
+
+* **Zu breite Arbeitsaufträge vermeiden.**\
+  Breite Prompts führen dazu, dass das LLM versucht, „alles auf einmal“ zu lösen. Beispiel:\
+  *Ungünstig:* „Bitte schreibe Phase B komplett aus.“\
+  *Gut:* „Bitte entwirf drei Varianten für die Unterstruktur von Phase B.“
+
+* **Jeder Zyklus braucht einen klaren Fokus.**\
+  Ohne klaren Schwerpunkt verzettelt sich der Chat. Beispiel:\
+  *Gut:* „Fokus nur auf die Definition des Ziels der Phase.“\
+  *Ungünstig:* „Mach Phase B besser.“
+
+* **Ebenen nicht vermischen.**\
+  Struktur, Inhalt und Formulierungen dürfen nicht gleichzeitig bearbeitet werden. Beispiel:\
+  *Klar:* „Wir bleiben auf Strukturebene. Formulierungen später.“\
+  *Unklar:* „Struktur okay — kannst du es direkt schön ausschreiben?“
+
+* **Iterationen nicht überspringen.**\
+  Der erste Entwurf ist oft unpräzise; ein zweiter oder dritter Durchlauf bringt Qualität.  Beispiel:\
+  *Vorgehen:* Struktur → Feedback → Verfeinerung → Bestätigung.
+
+* **Feedback muss konkret sein.**\
+  LLMs können mit vagen Rückmeldungen wenig anfangen. Beispiel:\
+  *Klar:* „Bitte Punkt 4 kürzer formulieren und Beispiel ergänzen.“\
+  *Vage:* „Das passt noch nicht so.“
+
+* **Der Prompt-Autor steuert den Arbeitsprozess.**\
+  Das LLM schlägt vor — der Mensch trifft Entscheidungen und gestaltet den Ablauf.  Beispiel:\
+  *Aktiv:* „Bitte zurück zum Fokus. Wir sind noch bei der Struktur, nicht der Formulierung.“\
+  *Passiv:* Das LLM arbeiten lassen und hoffen, dass es „sich schon richtig einpendelt“.
+
+* **Rechtzeitig Ergebnisse sichern.**\
+  Wenn Zwischenergebnisse nicht klar markiert werden, verschwinden sie im Chatverlauf. Beispiel:\
+  *Gut:* „Dieses Ergebnis nennen wir ‚Zwischenergebnis B.2 – stabil‘.“\
+  *Risiko:* Unmarkierte Entwürfe werden später überlagert und sind nicht mehr eindeutig auffindbar.
+
+
+### Ergebnisse und Artefakte
+
+* Klar benannte Zwischenergebnisse, die den aktuellen Arbeitsstand transparent machen und als stabile Bezugspunkte dienen.
+* Iterativ verfeinerte Inhalte oder Strukturen, die nachvollziehbar aus den einzelnen Arbeitszyklen hervorgegangen sind.
+* Deutlich markierte Ebenenwechsel, sodass erkennbar bleibt, wann von Struktur- zu Inhaltsebene oder von Grob- zu Feindetail gewechselt wurde.
+* Teilergebnisse, die ausreichend stabil und qualitätsgesichert sind, um später direkt in Repository-Dokumente übernommen zu werden.
+* Entscheidungsnotizen oder Klärungen, die den Entstehungsprozess dokumentieren und spätere Nachvollziehbarkeit erleichtern.
+* Eine logisch aufgebaute Folge von Arbeitsschritten, die zeigt, wie der Chat zum jeweiligen Ergebnis geführt hat und welche Argumente oder Varianten berücksichtigt wurden.
+
+### Beispiel für einen typischen Arbeitszyklus
+
+* Der Prompt-Autor legt den Fokus fest, zum Beispiel: „Bitte konzentriere dich ausschließlich auf die Unterstruktur von Phase B.“
+* Anschließend formuliert er den Auftrag: „Erstelle drei präzise strukturierte Varianten, jeweils in klar getrennten Blöcken.“
+* Das LLM liefert die Varianten; der Prompt-Autor prüft sie daraufhin, welche am besten zum Ziel des Chats passt.
+* Er gibt gezieltes Feedback, etwa: „Variante 2 ist vielversprechend, aber bitte den Teil zu den Iterationen klarer herausarbeiten.“
+* Eine weitere Iteration folgt, in der die Variante verbessert und präzisiert wird.
+* Sobald das Ergebnis stabil und klar ist, markiert der Prompt-Autor es als Zwischenergebnis: „Diese Fassung nennen wir ‚Strukturvariante B.1 – stabil‘.“
 
 ## Phase C – Ergebnissicherung
 
