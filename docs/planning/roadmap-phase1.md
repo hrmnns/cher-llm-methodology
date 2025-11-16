@@ -20,6 +20,7 @@ Die Roadmap folgt zwei Prinzipien:
 ### **Schritt 1 – Makroprozess definieren (Issue #11)** 
 Ziel: Gesamtphasen der LLM-Zusammenarbeit definieren.  
 Begründung: Der Makroprozess gibt den strukturellen Rahmen vor, an dem sich alle weiteren Elemente orientieren.
+Link: https://github.com/hrmnns/cher-llm-methodology/blob/main/docs/processes/process-macro.md (Version 1.0)
 
 ### **Schritt 2 – Mikroprozess definieren (Issue #12)**  
 Ziel: Struktur für jeden einzelnen Chat entwickeln.  
