@@ -40,9 +40,10 @@ Bei langfristiger LLM-Nutzung entstehen leicht Kontextdrift, Wissensverluste, In
 - [Phase 6 – Abschluss & Übergabe](#phase-6--abschluss--%C3%BCbergabe)
 - [Phase 7 – Pilotierung (optional)](#phase-7--pilotierung) 
 - [Phase 8 – Monitoring & kontinuierliche Verbesserung (optional)](#phase-8--monitoring--kontinuierliche-verbesserung)
-- [Rollenübersicht (prozessübergreifend)](#rollen%C3%BCbersicht-prozess%C3%BCbergreifend)
-- [Diagramme](#diagramme)
-- [Gesamtzusammenfassung](#abschluss-und-gesamtzusammenfassung)
+- [Übergeordnete Zusammenhänge](#%C3%BCberordnete-zusammenh%C3%A4nge)
+  - [Rollenübersicht (prozessübergreifend)](#rollen%C3%BCbersicht-prozess%C3%BCbergreifend)
+  - [Visualisierung](#visualisierung)
+- [Zusammenfassung und Fazit](#zusammenfassung-und-fazit)
 
 ## Phase 1 – Vorbereitung
 
@@ -773,9 +774,6 @@ Ein konkretes Beispiel aus dem Projekt „cher-llm-methodology“.
 7. **Entscheidung**  
    Das Projektteam entscheidet, die Methode anzupassen und dann in Phase 8 zu überführen.
 
-
---- 
-
 ## Phase 8 – Monitoring & kontinuierliche Verbesserung
 
 Diese optionale Phase dient der langfristigen Qualitätssicherung und Weiterentwicklung der Methode oder des Artefakts.  Während die Pilotierung einen einmaligen Test darstellt, sorgt das Monitoring dafür, dass die Methode über längere Zeit stabil, konsistent und wirksam bleibt. Die Phase ist zyklisch und kann dauerhaft parallel zu realen Einsätzen laufen.
@@ -884,7 +882,9 @@ Ein konkretes Beispiel aus dem Projekt „cher-llm-methodology“.
 7. **Neuer Zyklus beginnt**  
    Die nächste Monitoring-Runde wird für den Folgemonat geplant.
 
-## Rollenübersicht (prozessübergreifend)
+## Überordnete Zusammenhänge
+
+### Rollenübersicht (prozessübergreifend)
 
 Die folgenden Rollen werden im gesamten Makroprozess verwendet. Sie können von einzelnen Personen mehrfach wahrgenommen oder im Team verteilt werden.
 
@@ -914,7 +914,7 @@ Die folgenden Rollen werden im gesamten Makroprozess verwendet. Sie können von 
 
 Diese Rollen bilden gemeinsam das organisatorische Fundament, das für eine strukturierte, nachhaltige und qualitätsgesicherte LLM-Zusammenarbeit notwendig ist.
 
-## Diagramme
+### Visualisierung
 
 Nachfolgend ist der prozess als einfaches PlantUML-Diagramm (vgl. [PlantUML Web Server}(https://www.plantuml.com/)) dargestellt, das die 8 Phasen des Makroprozesses übersichtlich als Flowchart darstellt. Die Darstellung entspricht dem inhaltlichen Modell:
 - Phasen 1–6 linear
@@ -970,7 +970,7 @@ Es zeigt klar:
 - die optionalen Erweiterungen (7–8),
 - den Rückkopplungszyklus im Monitoring (P8 → P3).
 
-## Abschluss und Gesamtzusammenfassung
+## Zusammenfassung und Fazit
 
 Der Makroprozess bietet einen vollständigen, klar strukturierten Rahmen, um komplexe Vorhaben gemeinsam mit einem LLM über längere Zeiträume hinweg erfolgreich zu bearbeiten. Durch die konsequente Trennung in definierte Phasen entsteht ein Arbeitsmodell, das:
 
