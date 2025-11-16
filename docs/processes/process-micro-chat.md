@@ -264,19 +264,113 @@ Das LLM hat Rollen und Modus verstanden, der Mensch hat Ziel und Fokus definiert
 ## Phase C – Ergebnissicherung
 
 ### Ziel der Phase
-<!-- Sicherung der wesentlichen Ergebnisse im Chat selbst -->
+
+Die Ergebnissicherung stellt sicher, dass wesentliche Resultate des Chats klar identifiziert, benannt und dokumentiert werden. Sie verhindert, dass gute Ergebnisse im Verlauf des Chats überlagert oder unauffindbar werden, und legt die Grundlage für eine saubere Übergabe ins Repository.
+
+Das Ziel der Phase ist es, stabile, eindeutig benannte Ergebnisse zu erzeugen, die direkt weiterverwendet werden können.
 
 ### Einstieg / Trigger
-<!-- z. B. wenn ein Zwischenergebnis stabil ist -->
+
+Diese Phase beginnt immer dann, wenn:
+
+* ein inhaltliches oder strukturelles Ergebnis stabil genug erscheint,
+* ein Arbeitsabschnitt abgeschlossen wurde,
+* ein Zwischenergebnis explizit als Grundlage für spätere Schritte dienen soll,
+* oder der Prompt-Autor sicherstellen möchte, dass ein bestimmter Stand nicht verloren geht.
+
+Die Ergebnissicherung ist keine einmalige Aktion, sondern läuft parallel und bedarfsgesteuert innerhalb der Phase B.
 
 ### Schritte in der Phase
-<!-- Zusammenfassen, benennen, kennzeichnen (z. B. „final“ / „ready for repo“) -->
 
-### Ergebnisse / Artefakte
-<!-- klar markierte Ergebnisblöcke, Zusammenfassungen -->
+1. **Stabile Ergebnisse identifizieren**\
+   Der Prompt-Autor entscheidet, welche Inhalte oder Strukturen als „ausreichend stabil“ gelten, um sie zu sichern.
 
-### Beispiel
-<!-- Beispiel für einen als final gekennzeichneten Block -->
+2. **Klare Benennung vergeben**\
+   Ergebnisse erhalten einen eindeutigen Namen, zum Beispiel:\
+   „Zwischenergebnis C.1 – Strukturentwurf“,\
+   „Ergebnisblock – finaler Abschnitt der Phase B“.
+
+3. **Ergebnis in einem sauber abgegrenzten Block festhalten**\
+   Das LLM liefert das Ergebnis klar getrennt vom restlichen Text, ohne Meta-Diskussion.\
+   Der Prompt-Autor prüft, ob der Block vollständig und sauber abgegrenzt ist.
+
+4. **Version oder Status markieren**\
+   Der Prompt-Autor kennzeichnet das Ergebnis, zum Beispiel:\
+   „stabil“, „final“, „für Repo geeignet“, „Entwurf v0.2“.
+
+5. **Kontext kurz ergänzen (falls nötig)**\
+   Wenn es für die spätere Übergabe relevant ist, wird kurz erklärt, wie der Block entstanden ist oder wozu er dient.
+
+6. **Bestätigung des Ergebnisses**\
+   Der Prompt-Autor entscheidet explizit, dass der Block final oder stabil genug ist, um für Phase D bereit zu sein.
+
+### Was der Prompt-Autor in dieser Phase tun muss (Kernverantwortungen)
+
+* Stabilität des Ergebnisses einschätzen und bewusst entscheiden, ob es sichertauglich ist.
+* Ergebnisse klar benennen, damit sie später auffindbar und referenzierbar sind.
+* Verantwortlich prüfen, ob der Ergebnisblock logisch stimmig, vollständig und passend zum Chat-Ziel ist.
+* Darauf achten, dass Ergebnisblöcke sauber getrennt von Diskussionen und Begleittexten stehen.
+* Klarstellen, ob ein Ergebnis „stabil“ oder „final“ ist.
+* Sicherstellen, dass alles, was später ins Repository gehört, in dieser Phase sauber markiert wird.
+
+### Worauf der Prompt-Autor besonders achten muss (Critical Points)
+
+* **Ergebnisse niemals ungekennzeichnet im Chat stehen lassen.**\
+  Unmarkierte Ergebnisse verschwinden später im Verlauf und sind schwer reproduzierbar. Beispiel:\
+  Ungünstig: „Das sieht gut aus.“\
+  Gut: „Bitte markiere diesen Block als ‚Zwischenergebnis C.2 – stabil‘.“
+
+* **Ergebnisblöcke müssen sauber abgegrenzt werden.**\
+  Wenn Diskussion und Ergebnis vermischt sind, wird die spätere Übernahme erschwert. Beispiel:\
+  Gut: Ein separater Block nur mit Inhalt, keine Meta-Kommentare.
+
+* **Jedes Ergebnis braucht einen Namen.**\
+  Benennungen verhindern Verwechslungen und erleichtern Bezüge in späteren Chats.\
+  Beispiel: „Finaler Entwurf Phase B – Version 0.3“.
+
+* **Stabil ≠ final.**\
+  Ein stabiles Ergebnis kann Grundlage für Weiterarbeit sein, ist aber noch nicht repository-ready.
+
+* **Nur geprüfte Ergebnisse sichern.**\
+  Es ist Aufgabe des Prompt-Autors, Resultate vor der Sicherung zu prüfen. Niemals unkontrolliert übernehmen.
+
+* **Dokumentation vermeiden, die zu ausführlich ist.**\
+  Sicherung heißt Klarheit, nicht ausufernde Historie. Ergebnisblöcke kurz, präzise und eindeutig halten.
+
+### Ergebnisse und Artefakte
+
+* klar benannte und sauber abgegrenzte Ergebnisblöcke
+* definierte Versionen oder Statusangaben (z. B. „stabil“, „final“)
+* Zwischenergebnisse, die als Grundlage für spätere Bearbeitung dienen
+* konsistente und nachvollziehbare Dokumentationspunkte innerhalb des Chats
+* Ergebnisblöcke, die für Phase D (Übergabe ins Repository) vorbereitet sind
+* eindeutige Referenzen, die eine spätere Wiederverwendung sicherstellen
+
+### Beispiel für eine Ergebnissicherung
+
+* Der Prompt-Autor erkennt, dass ein Strukturentwurf aus Phase B nun stabil ist.
+* Er bittet das LLM: „Bitte stelle diesen Strukturentwurf als sauberen, separaten Ergebnisblock bereit.“
+* Das LLM liefert den Block; der Prompt-Autor prüft und ergänzt einen Status wie „Zwischenergebnis C.3 – stabil“.
+* Der Block wird bestätigt und später in Phase D für das Repository genutzt.
+
+### Ergebnisse und Artefakte
+
+* Eindeutig benannte Ergebnisblöcke, die den Stand eines Arbeitsabschnitts klar widerspiegeln und jederzeit wiedergefunden werden können.
+* Knappe Statuskennzeichnungen wie „stabil“, „final“ oder „Entwurf v0.2“, die transparent machen, wie weit das Ergebnis gereift ist.
+* Zwischenergebnisse, die als verlässliche Basis für spätere Schritte oder nächste Chats verwendet werden können.
+* Klar abgegrenzte Inhalte, die vom Begleittext getrennt sind und sich dadurch leichter für das Repository übernehmen lassen.
+* Dokumentierte Entscheidungen oder Klärungen, die zeigen, warum ein bestimmter Entwurf gewählt oder verworfen wurde.
+* Eine nachvollziehbare Abfolge von Ergebnispunkten, die deutlich macht, wie der Chat Schritt für Schritt zum Endstand gelangt ist.
+
+### Beispiel für eine Ergebnissicherung
+
+* Der Prompt-Autor erkennt, dass ein Strukturentwurf aus der vorherigen Iteration nun ausreichend ausgereift ist, um ihn zu sichern.
+* Er formuliert den Auftrag: „Bitte stelle den Strukturentwurf noch einmal als sauberen, getrennten Ergebnisblock bereit.“
+* Das LLM liefert den Block; der Prompt-Autor prüft ihn und ergänzt eine klare Bezeichnung wie „Zwischenergebnis C.3 – stabil“.
+* Anschließend bestätigt er, dass dieser Stand als Grundlage für die weitere Arbeit oder für die spätere Übergabe ins Repository dienen soll.
+
+
+
 
 ## Phase D – Übergabe ins Repository
 
