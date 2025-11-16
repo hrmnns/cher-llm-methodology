@@ -1,6 +1,6 @@
 # Dokumentationsübersicht – cher-llm-methodology
 
-Dieses Verzeichnis enthält die interne Projektdokumentation der Methodik. Die Struktur folgt der definierten Informationsarchitektur aus `information-architecture.md` (#8).
+Dieses Verzeichnis enthält die interne Projektdokumentation der Methodik. Die Struktur folgt der definierten Informationsarchitektur aus [information-architecture.md](meta/information-architecture.md).
 
 ## Foundations
 Grundlagen und Kontext des Projekts.
