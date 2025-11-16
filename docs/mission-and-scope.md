@@ -1,4 +1,4 @@
-# Vorhaben: Strukturierte Zusammenarbeit mit LLMs in komplexen Projekten
+# Entwicklung einer Methode zur strukturierten Zusammenarbeit mit LLMs in komplexen Projekten
 
 ## 1. Hintergrund und Motivation
 
@@ -62,21 +62,7 @@ Aus der bisherigen Erfahrung und den Überlegungen in diesem Projekt ergeben sic
    - Wichtige Entscheidungen, Definitionen und Modelle sollen in der Dokumentation nachvollziehbar sein.
    - Die Verbindung zwischen Chat-Ergebnissen und Repository-Inhalten soll erkennbar sein (z. B. über Issues, Commits, Referenzen).
 
-## 5. Anwendungsbeispiel: cher-webapp-core
-
-Ein konkretes Beispiel für ein solches komplexes Vorhaben ist das Projekt **`cher-webapp-core`**:
-
-- Entwicklung eines WebApp-Core-Frameworks mit Komponenten, Layouts und einer FormsEngine.
-- Viele Teilthemen (Architektur, Design, JSON-Schemata, Beispiel-Apps, Dokumentation).
-- Mehrere Chat-Sitzungen, die über Tage oder Wochen verteilt sind.
-
-Die hier entwickelte Methodik soll es ermöglichen, ein derartiges Projekt:
-
-- systematisch mit einem LLM zu begleiten,
-- Erkenntnisse kontinuierlich zu sichern,
-- und die Zusammenarbeit im Laufe der Zeit gezielt zu verbessern.
-
-## 6. Abgrenzung
+## 5. Abgrenzung
 
 Dieses Vorhaben konzentriert sich auf:
 
