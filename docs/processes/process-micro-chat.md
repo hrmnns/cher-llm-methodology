@@ -1,6 +1,6 @@
 # Mikroprozess „Chat-basierte Zusammenarbeit mit LLM“
 
-Dieser Mikroprozess beschreibt den Ablauf eines einzelnen Chats im Rahmen der Arbeit mit dem Repository `cher-llm-methodology`. Ziel ist es, Chats strukturiert, konsistent und reproduzierbar zu gestalten. Er definiert Phasen, Rollen, Ergebnisformate und Regeln für die Übergabe der Chat-Ergebnisse ins Repository. Der Mikroprozess wird in jedem fachlich relevanten Projekt-Chat angewendet.
+Der Mikroprozess beschreibt den Ablauf eines einzelnen Chats. Ziel ist es, Chats strukturiert, konsistent und reproduzierbar zu gestalten. Er definiert Phasen, Rollen, Ergebnisformate und Regeln für die Übergabe der Chat-Ergebnisse ins Repository. Der Mikroprozess wird in jedem fachlich relevanten Projekt-Chat angewendet.
 
 ## Executive Summary
 
@@ -22,6 +22,7 @@ Dieser Mikroprozess beschreibt den Ablauf eines einzelnen Chats im Rahmen der Ar
 - [Mikroprozess „Chat-basierte Zusammenarbeit mit LLM\"](#mikroprozess-chat-basierte-zusammenarbeit-mit-llm)
 - [Executive Summary](#executive-summary)
 - [Inhaltsverzeichnis](#inhaltsverzeichnis)
+- [Prozessbeschreibung](#prozessbeschreibung)
 - [Phase A – Chat-Start](#phase-a--chat-start)
 - [Phase B – Strukturierter Arbeitszyklus](#phase-b--strukturierter-arbeitszyklus)
 - [Phase C – Ergebnissicherung](#phase-c--ergebnissicherung)
@@ -29,6 +30,143 @@ Dieser Mikroprozess beschreibt den Ablauf eines einzelnen Chats im Rahmen der Ar
 - [Phase E – Chat-Abschluss](#phase-e--chat-abschluss)
 - [Übergeordnete Zusammenhänge](#übergeordnete-zusammenhänge)
 - [Zusammenfassung und Fazit](#zusammenfassung-und-fazit)
+
+## Prozessbeschreibung
+
+Der Mikroprozess „Chat“ bildet das operative Herzstück der Zusammenarbeit zwischen Mensch und LLM. Er beschreibt, wie ein projektbezogener Chat strukturiert, gesteuert und zu verwertbaren Ergebnissen geführt wird.
+Bevor die einzelnen Phasen im Detail erläutert werden, bietet dieser Abschnitt einen kompakten Gesamtüberblick über den Prozessablauf und erklärt die Rollen, die im Chat miteinander interagieren. Auf dieser Grundlage folgt anschließend eine etwas detailliertere Darstellung des gesamten Prozesses.
+
+### Rollenmodell
+
+Der Mikroprozess beruht auf einer klaren Rollenverteilung, die sicherstellt, dass Mensch und LLM effizient zusammenarbeiten und die jeweiligen Verantwortlichkeiten eindeutig geklärt sind.
+
+#### **Prompt-Autor (Mensch)**
+Der Prompt-Autor ist die steuernde Instanz des Chats. Er definiert Ziele, formuliert Prompts, priorisiert Themen und trifft alle Entscheidungen. Zu seinen Aufgaben gehören u. a.:
+
+* Ziele und Kontext präzise setzen
+* klare Prompts formulieren
+* Fokus steuern und Ebenenwechsel ansagen
+* Ergebnisse prüfen und finalisieren
+* Übergaben ins Repository durchführen
+* Issues abschließen oder fortführen
+
+Kurz: Der Prompt-Autor führt den Prozess.
+
+#### **LLM (z. B. ChatGPT)**
+Das LLM handelt innerhalb des Rahmens, den der Prompt-Autor vorgibt. Es unterstützt durch Strukturvorschläge, Ideen, Entwürfe oder Reviews. Seine Rolle kann je nach Modus wechseln (z. B. Co-Autor, Reviewer oder Konsolidierer).
+
+Kurz: Das LLM führt aus und liefert Inhalte – der Mensch entscheidet.
+
+### Prozessablauf
+
+Das nachfolgend dargestellte Diagramm zeigt den gesamten Mikroprozess in seiner zeitlichen Abfolge und verdeutlicht gleichzeitig die Rollenverteilung zwischen Prompt-Autor und LLM. Es stellt die fünf Phasen des Mikroprozesses dar — vom ersten Start-Prompt über die iterativen Arbeitszyklen bis hin zur Ergebnissicherung, Repository-Übergabe und dem Abschlussblock.
+
+Der Ablauf des Mikroprozesses wird mit Hilfe von Swimlanes und Phasenmarkierungen übersichtlich dargestellt und dadurch leicht nachvollziehbar. Die Swimlanes zeigen, welche Schritte vom Prompt-Autor und welche vom LLM ausgeführt werden, während die Phasenmarkierungen den zeitlichen Verlauf und die logische Struktur des Prozesses sichtbar machen. Auf diese Weise wird deutlich, wie der Chat systematisch von der Startphase über die iterativen Arbeitszyklen bis zur Ergebnissicherung und Repository-Übergabe geführt wird und schließlich in einem klaren Abschluss endet. Die Darstellung verdeutlicht außerdem, an welchen Stellen Entscheidungen getroffen werden, wie Iterationen ablaufen und wie die Verantwortung zwischen Mensch und LLM verteilt ist. Dadurch entsteht ein kompaktes Gesamtbild, das die Orientierung erleichtert und den Einstieg in die detaillierte Phasenbeschreibung unterstützt.
+
+Das Diagramm dient als Einstieg in die ausführliche Beschreibung der Phasen A bis E und vermittelt den Gesamtzusammenhang des Ablaufs, bevor die einzelnen Schritte im Detail erläutert werden.
+
+```PlantUML
+@startuml
+title Mikroprozess "Chat" – Swimlane mit Phasen (Prompt-Autor / LLM)
+
+|Prompt-Autor|
+start
+
+floating note left
+Phase A – Chat-Start
+end note
+
+|Prompt-Autor|
+:Chat öffnen;
+:Start-Prompt-Block erstellen;
+
+|LLM|
+:Start-Prompt bestätigen;
+
+|Prompt-Autor|
+:Start-Prompt freigeben;
+
+floating note left
+Phase B – Strukturierter Arbeitszyklus
+end note
+
+|Prompt-Autor|
+repeat
+  :Fokus für nächsten Schritt festlegen;
+  :Auftrag als Prompt formulieren;
+
+  |LLM|
+  :Ergebnis liefern
+  (Struktur, Text, Review);
+
+  |Prompt-Autor|
+  :Ergebnis prüfen;
+  :Feedback geben / nachschärfen;
+repeat while (weiterer Zyklus nötig?) is (ja)
+-> (nein);
+
+floating note left
+Phase C – Ergebnissicherung
+end note
+
+|Prompt-Autor|
+:Stabile Ergebnisse auswählen;
+
+|LLM|
+:Ergebnisblöcke getrennt bereitstellen;
+
+|Prompt-Autor|
+:Ergebnisse benennen
+(z. B. "Zwischenergebnis C.2 – stabil");
+:Status/Version festlegen;
+
+floating note left
+Phase D – Übergabe ins Repository
+end note
+
+|Prompt-Autor|
+if (Ergebnis repository-relevant?) then (ja)
+  :Zielort festlegen
+  (z. B. docs/, process/, planning/, Issues);
+  :Inhalt ggf. konsolidieren;
+  :In Repository übertragen;
+  :Verlinkungen/Referenzen ergänzen;
+else (nein)
+  :Ergebnis im Chat belassen;
+endif
+
+floating note left
+Phase E – Chat-Abschluss
+end note
+
+|Prompt-Autor|
+:LLM um Abschlussblock bitten;
+
+|LLM|
+:Abschlussblock formulieren
+(Ergebnisse, Übergaben, offene Punkte, nächste Schritte);
+
+|Prompt-Autor|
+:Abschlussblock prüfen und bestätigen;
+:Chat bewusst beenden;
+stop
+
+@enduml
+```
+
+Der Prozess beginnt beim Prompt-Autor, der den Chat eröffnet und den Start-Prompt-Block formuliert. Darin legt er Kontext, Ziel, Rollen, Arbeitsmodus und alle relevanten Bezüge fest. Das LLM bestätigt diesen Start-Prompt und zeigt damit an, dass es die Vorgaben verstanden hat und bereit ist, im definierten Rahmen zu arbeiten. Anschließend prüft der Prompt-Autor den Start-Prompt noch einmal und bestätigt ihn endgültig – erst dann beginnt der eigentliche Arbeitsprozess.
+
+Der Kern des Diagramms ist der iterative Arbeitszyklus. In jeder Schleife setzt der Prompt-Autor einen klaren Fokus und formuliert den nächsten spezifischen Auftrag. Das LLM liefert daraufhin die angeforderten Inhalte, etwa Strukturvorschläge, Textausarbeitungen oder Reviews. Der Prompt-Autor prüft die Ergebnisse, gibt Rückmeldungen und entscheidet, ob eine weitere Iteration notwendig ist oder ob der aktuelle Arbeitsschritt abgeschlossen werden kann. Diese Schleife wird so oft wiederholt, bis die Ergebnisse stabil genug sind.
+
+Sobald ein Ergebnis als stabil gilt, beginnt die Phase der Ergebnissicherung. Der Prompt-Autor identifiziert relevante Inhalte, die das LLM anschließend als klar abgegrenzten Ergebnisblock bereitstellt. Der Prompt-Autor versieht diesen Block mit einer eindeutigen Bezeichnung und einem Status wie „stabil“ oder „final“. Das Diagramm zeigt deutlich, wie die Verantwortung hierbei zwischen LLM (Lieferung des Blocks) und Prompt-Autor (Prüfung, Benennung, Versionierung) verteilt ist.
+
+An einem Entscheidungspunkt wird geprüft, ob das gesicherte Ergebnis repository-relevant ist. Falls ja, übernimmt der Prompt-Autor die Verantwortung: Er wählt das passende Zielverzeichnis aus, bereitet den Inhalt auf, überträgt ihn ins Repository und ergänzt gegebenenfalls Verlinkungen oder begleitende Issues. Falls nein, bleibt das Ergebnis im Chat-Kontext, ohne dass eine Repository-Änderung vorgenommen wird.
+
+Am Ende folgt der Chat-Abschluss. Der Prompt-Autor lässt das LLM einen Abschlussblock erstellen, der die wichtigsten Ergebnisse, offenen Punkte und nächsten Schritte zusammenfasst. Nach einer finalen Prüfung bestätigt der Prompt-Autor diesen Abschlussblock und beendet den Chat formell. Damit ist der Übergang in Folgechats, Repository-Arbeiten oder weitere Prozessschritte klar definiert.
+
+Insgesamt zeigt das Diagramm sehr anschaulich, dass der Prompt-Autor den gesamten Prozess führt, während das LLM unterstützend und auszuführen agiert. Durch die klare Trennung zwischen den Lanes wird sichtbar, welche Schritte von wem verantwortet werden und wie der methodische Rhythmus zwischen Mensch und LLM einen strukturierten, reproduzierbaren Chat ermöglicht.
+
+
 
 ## Phase A – Chat-Start
 
@@ -584,21 +722,41 @@ Der Abschlussblock muss so geschrieben sein, dass ein anderer Chat (oder der Pro
 
 ## Übergeordnete Zusammenhänge
 
-### Rollenmodell im Mikroprozess „Chat“
+Gerne — hier ist die **geglättete, flüssigere und stilistisch einheitliche Fassung** der übergeordneten Zusammenhänge.
+Sie bleibt vollständig inhaltlich präzise, aber deutlich eleganter und klarer lesbar.
 
-<!-- Beschreibung der Rollen (z. B. LLM als Methodiker/Strukturgeber/Reviewer, Nutzer als Product Owner/Entscheider etc.) -->
+---
 
-### Visualisierung des Mikroprozesses
+# **Übergeordnete Zusammenhänge – geglättete Fassung**
 
-<!-- Verweis auf ein oder mehrere Diagramme (z. B. PlantUML Activity Diagram, Swimlane LLM/Mensch) -->
 
-### Beziehung zum Makroprozess und weiteren Bausteinen
 
-<!-- 
-- Bezug zu `process-macro.md`
-- Bezug zu `chatgpt-projects.md`, `mission-and-scope.md`
-- Konsistenz der Begriffe (Phase, Iteration, Ebene, Artefakt)
--->
+## **Beziehung zum Makroprozess und weiteren Bausteinen**
+
+Der Mikroprozess steht nicht isoliert, sondern ist eng mit dem Makroprozess, der Informationsarchitektur und den übrigen Methodik-Bausteinen verbunden.
+
+### **Beziehung zum Makroprozess**
+
+Während der Makroprozess die übergeordnete Struktur vorgibt (z. B. Vorbereitung, Planung, Ausarbeitung, Qualitätssicherung), bildet der Mikroprozess den operativen Mechanismus, um in diesen Phasen tatsächlich Ergebnisse zu erzeugen.
+Er kommt in jeder Phase zum Einsatz — immer dann, wenn im Chat gearbeitet wird.
+
+### **Beziehung zur Informationsarchitektur**
+
+Die Informationsarchitektur definiert, wo welche Inhalte im Repository abgelegt werden.
+Phase D des Mikroprozesses sorgt dafür, dass Ergebnisse an genau der richtigen Stelle landen und die Ordnung des Repositories gewahrt bleibt.
+
+### **Beziehung zu weiteren Bausteinen**
+
+Der Mikroprozess nutzt und konkretisiert weitere Elemente der Methodik:
+
+* Das Rollenmodell fließt direkt in Phase A ein.
+* Prompting-Standards prägen die Arbeitsschritte in Phase B.
+* Die Dokumentstruktur bestimmt, wohin Inhalte in Phase D übertragen werden.
+
+So entsteht ein konsistentes Zusammenspiel aller Bausteine.
+
+
+
 
 ## Zusammenfassung und Fazit
 
