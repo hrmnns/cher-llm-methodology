@@ -51,6 +51,8 @@ Der folgende Abschnitt beschreibt den Makroprozess zunächst aus einer Gesamtper
 
 Der Makroprozess nutzt ein klares Rollenmodell, das über alle Phasen hinweg stabil bleibt. Es definiert Verantwortlichkeiten, Schnittstellen und Zuständigkeiten und ist damit die Grundlage für eine strukturierte Zusammenarbeit.
 
+**Hinweis:** Die hier beschriebenen Rollen sind Verantwortlichkeiten, keine zwingend getrennten Personen. Eine einzelne Person kann mehrere Rollen übernehmen, insbesondere in kleinen Projekten oder während der Entwicklung der Methodik. Der Makroprozess ist vollständig funktionsfähig, auch wenn alle Rollen in Personalunion wahrgenommen werden.
+
 | Rollenkategorie | Rolle | Beschreibung |
 |-----------------|--------|--------------|
 | **Fachliche Rollen** | Auftraggeber / Projektverantwortlicher | Definiert Ziel, Scope und Prioritäten des Vorhabens. Trifft zentrale Entscheidungen und verantwortet Freigaben. |
@@ -917,6 +919,8 @@ Ein konkretes Beispiel aus dem Projekt „cher-llm-methodology“.
    Die nächste Monitoring-Runde wird für den Folgemonat geplant.
 
 ## Überordnete Zusammenhänge
+
+Der Makroprozess ist so gestaltet, dass er sowohl von Einzelpersonen als auch von Teams durchgeführt werden kann. Rollen beschreiben Verantwortlichkeiten, nicht zwingend separate Personen. In kleineren Projekten können alle Rollen von einer einzigen Person übernommen werden; in größeren Projekten werden sie typischerweise auf mehrere Personen verteilt.
 
 Der Makroprozess ist nicht isoliert zu verstehen, sondern bildet das zentrale Ordnungs- und Ablaufmodell innerhalb der gesamten Methodologie. Er beschreibt den strukturellen Rahmen, in dem alle Aktivitäten der LLM-Zusammenarbeit ablaufen, und verbindet sich auf mehreren Ebenen mit weiteren Prozessen und Artefakten des Projekts.
 
