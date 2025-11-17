@@ -1,0 +1,86 @@
+@startuml
+title Mikroprozess "Chat" – Swimlane mit Phasen (Prompt-Autor / LLM)
+
+|Prompt-Autor|
+start
+
+floating note left
+Phase A – Chat-Start
+end note
+
+|Prompt-Autor|
+:Chat öffnen;
+:Start-Prompt-Block erstellen;
+
+|LLM|
+:Start-Prompt bestätigen;
+
+|Prompt-Autor|
+:Start-Prompt freigeben;
+
+floating note left
+Phase B – Strukturierter Arbeitszyklus
+end note
+
+|Prompt-Autor|
+repeat
+  :Fokus für nächsten Schritt festlegen;
+  :Auftrag als Prompt formulieren;
+
+  |LLM|
+  :Ergebnis liefern
+  (Struktur, Text, Review);
+
+  |Prompt-Autor|
+  :Ergebnis prüfen;
+  :Feedback geben / nachschärfen;
+repeat while (weiterer Zyklus nötig?) is (ja)
+-> (nein);
+
+floating note left
+Phase C – Ergebnissicherung
+end note
+
+|Prompt-Autor|
+:Stabile Ergebnisse auswählen;
+
+|LLM|
+:Ergebnisblöcke getrennt bereitstellen;
+
+|Prompt-Autor|
+:Ergebnisse benennen
+(z. B. "Zwischenergebnis C.2 – stabil");
+:Status/Version festlegen;
+
+floating note left
+Phase D – Übergabe ins Repository
+end note
+
+|Prompt-Autor|
+if (Ergebnis repository-relevant?) then (ja)
+  :Zielort festlegen
+  (z. B. docs/, process/, planning/, Issues);
+  :Inhalt ggf. konsolidieren;
+  :In Repository übertragen;
+  :Verlinkungen/Referenzen ergänzen;
+else (nein)
+  :Ergebnis im Chat belassen;
+endif
+
+floating note left
+Phase E – Chat-Abschluss
+end note
+
+|Prompt-Autor|
+:LLM um Abschlussblock bitten;
+
+|LLM|
+:Abschlussblock formulieren
+(Ergebnisse, Übergaben, offene Punkte, nächste Schritte);
+
+|Prompt-Autor|
+:Abschlussblock prüfen und bestätigen;
+:Chat bewusst beenden;
+stop
+
+@enduml
