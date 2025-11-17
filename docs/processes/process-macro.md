@@ -918,105 +918,25 @@ Ein konkretes Beispiel aus dem Projekt „cher-llm-methodology“.
 
 ## Überordnete Zusammenhänge
 
-### Rollenübersicht (prozessübergreifend)
+Der Makroprozess ist nicht isoliert zu verstehen, sondern bildet das zentrale Ordnungs- und Ablaufmodell innerhalb der gesamten Methodologie. Er beschreibt den strukturellen Rahmen, in dem alle Aktivitäten der LLM-Zusammenarbeit ablaufen, und verbindet sich auf mehreren Ebenen mit weiteren Prozessen und Artefakten des Projekts.
 
-Die folgenden Rollen werden im gesamten Makroprozess verwendet. Sie können von einzelnen Personen mehrfach wahrgenommen oder im Team verteilt werden.
+Zunächst steht der Makroprozess in engem Bezug zur Informationsarchitektur. Diese legt fest, wie die im Prozess erzeugten Inhalte abgelegt, strukturiert, versioniert und miteinander verknüpft werden. Der Makroprozess definiert die Schritte der inhaltlichen Arbeit, während die Informationsarchitektur sicherstellt, dass die Ergebnisse dauerhaft auffindbar, konsistent dokumentiert und stabil referenzierbar bleiben.
 
-### Fachliche Rollen
-| Rolle | Beschreibung |
-|-------|--------------|
-| **Auftraggeber / Projektverantwortlicher** | Definiert Ziel, Scope und Prioritäten des Vorhabens; trifft zentrale Entscheidungen. |
-| **Fachexperten / Domain Experts** | Bringen fachliches Wissen ein, prüfen Inhalte auf Korrektheit und Relevanz. |
+Darüber hinaus bildet der Makroprozess die Grundlage für die Mikroprozesse, die einzelne Arbeitsschritte innerhalb der Phasen weiter ausdifferenzieren. Während der Makroprozess beschreibt, wann welche Art von Arbeit stattfindet, definieren die Mikroprozesse im Detail, wie diese Arbeit konkret durchgeführt wird – etwa wie mit dem LLM iteriert wird, wie Varianten gebildet oder wie Entscheidungen festgehalten werden. Der Makroprozess und die Mikroprozesse ergänzen sich damit zu einem vollständigen methodischen System.
 
-### Methodische Rollen
-| Rolle | Beschreibung |
-|-------|--------------|
-| **LLM-Methodiker** | Verantwortet Struktur, Vorgehensweise und methodische Qualität der LLM-Zusammenarbeit. Moderiert den Prozess. |
-| **Reviewer** | Prüft Ergebnisse auf Konsistenz, Lesbarkeit, logische Qualität und Anschlussfähigkeit. |
+Auch zur Roadmap besteht ein direkter Zusammenhang. Die Roadmap legt fest, wann der Makroprozess selbst weiterentwickelt, ergänzt oder überprüft wird, und definiert die zeitliche Planung für nachgelagerte Elemente wie Rollenprofile, Workflows, Templates oder Use-Case-spezifische Anleitungen. Der Makroprozess markiert damit einen zentralen Meilenstein in der methodischen Entwicklung.
 
-### Dokumentations- und Strukturrollen
-| Rolle | Beschreibung |
-|-------|--------------|
-| **Dokumentationsverantwortlicher** | Überführt Ergebnisse ins Repository, pflegt Versionen und stellt langfristige Nachvollziehbarkeit sicher. |
-| **Stakeholder** | Empfangen Ergebnisse, geben Feedback oder beurteilen die Anwendbarkeit (z. B. in Pilotierung). |
+Nicht zuletzt steht der Makroprozess im Austausch mit der Projektanweisung und der Zusammenarbeit mit dem LLM. Während die Projektanweisung die Rollen, Verantwortlichkeiten und Kommunikationsregeln definiert, beschreibt der Makroprozess die strukturelle Abfolge von Aktivitäten. Beide zusammen bestimmen, wie Menschen und LLM methodisch geführt miteinander arbeiten.
 
-### Rollen im erweiterten Kontext
-| Rolle | Beschreibung |
-|-------|--------------|
-| **Pilotanwender** | Testen die Methode oder das Artefakt unter realen Bedingungen; liefern wertvolles Praxisfeedback. |
-| **Monitoring-Verantwortlicher** | Beobachtet die Nutzung über längere Zeiträume hinweg und leitet Verbesserungen ein (oft deckungsgleich mit dem Methodiker). |
-
-Diese Rollen bilden gemeinsam das organisatorische Fundament, das für eine strukturierte, nachhaltige und qualitätsgesicherte LLM-Zusammenarbeit notwendig ist.
-
-### Visualisierung
-
-Nachfolgend ist der prozess als einfaches PlantUML-Diagramm (vgl. [PlantUML Web Server}(https://www.plantuml.com/)) dargestellt, das die 8 Phasen des Makroprozesses übersichtlich als Flowchart darstellt. Die Darstellung entspricht dem inhaltlichen Modell:
-- Phasen 1–6 linear
-- Phase 7 optional
-- Phase 8 optional, zyklisch
-
-```plantuml
-@startuml
-skinparam rectangle {
-  BackgroundColor<<core>> #ddeeff
-  BackgroundColor<<optional>> #e8e8e8
-  BorderColor #333388
-  RoundCorner 15
-}
-skinparam arrow {
-  Color #333388
-  Thickness 1.2
-}
-
-title Makroprozess der strukturierten LLM-Zusammenarbeit (8 Phasen)
-
-rectangle "Phase 1\nVorbereitung" <<core>> as P1
-rectangle "Phase 2\nProblemrahmen definieren" <<core>> as P2
-rectangle "Phase 3\nOperative Bearbeitung" <<core>> as P3
-rectangle "Phase 4\nKonsolidierung" <<core>> as P4
-rectangle "Phase 5\nPersistenz /\nÜberführung ins Repo" <<core>> as P5
-rectangle "Phase 6\nAbschluss & Übergabe" <<core>> as P6
-
-rectangle "Phase 7\nPilotierung\n(optional)" <<optional>> as P7
-rectangle "Phase 8\nMonitoring &\nkontinuierliche Verbesserung\n(optional, zyklisch)" <<optional>> as P8
-
-' Linearer Hauptfluss
-P1 --> P2
-P2 --> P3
-P3 --> P4
-P4 --> P5
-P5 --> P6
-
-' Optionale Erweiterungen
-P6 --> P7 : optional
-P7 --> P8 : optional
-
-' Zyklischer Charakter von Monitoring
-P8 --> P3 : Rückkopplung\n(z. B. neue Aufgaben)\noptional
-
-@enduml
-
-```
-
-Das Diagramm nutzt PlantUML-typische Farben, abgerundete Ecken und Rollenmarkierungen (<<core>> vs. <<optional>>).
-Es zeigt klar:
-- den linearen Kernprozess (1–6),
-- die optionalen Erweiterungen (7–8),
-- den Rückkopplungszyklus im Monitoring (P8 → P3).
+Durch dieses Zusammenspiel bildet der Makroprozess eine verbindende Klammer zwischen Struktur, Inhalt, Governance und praktischer Anwendung. Er schafft einen stabilem Rahmen, auf dem alle weiteren Prozesse, Dokumente und Arbeitsschritte aufbauen.
 
 ## Zusammenfassung und Fazit
 
-Der Makroprozess bietet einen vollständigen, klar strukturierten Rahmen, um komplexe Vorhaben gemeinsam mit einem LLM über längere Zeiträume hinweg erfolgreich zu bearbeiten. Durch die konsequente Trennung in definierte Phasen entsteht ein Arbeitsmodell, das:
+Der Makroprozess stellt den zentralen Ablaufrahmen für die strukturierte und nachvollziehbare Zusammenarbeit mit einem LLM dar. Er führt alle beteiligten Rollen durch acht klar definierte Phasen — von der initialen Vorbereitung über die operative Bearbeitung und Konsolidierung bis hin zur finalen Übergabe und optionalen Weiterentwicklung. Durch die logische Abfolge der Phasen entsteht ein stabiler, reproduzierbarer Prozess, der sicherstellt, dass komplexe Inhalte kontrolliert erarbeitet, konsistent dokumentiert und langfristig nutzbar gemacht werden können.
 
-- Orientierung gibt,  
-- Ergebnisse stabilisiert,  
-- Wissensverlust vermeidet,  
-- Qualität langfristig sicherstellt  
-- und die Zusammenarbeit zwischen Menschen und LLMs reproduzierbar macht.
+Die Prozessbeschreibung vereint zwei Perspektiven: Zum einen die Rollenebene, die verdeutlicht, welche Akteure an welcher Stelle Verantwortung übernehmen, und zum anderen den strukturierten Prozessablauf, der die zeitliche und inhaltliche Logik des Vorgehens abbildet. Diagramme und Fließtexte ergänzen sich, um den Gesamtprozess sowohl visuell als auch inhaltlich verständlich zu machen. Im Zusammenspiel mit der Informationsarchitektur, den Mikroprozessen und der Projektanweisung entsteht ein harmonisches, methodisches System, das sowohl Orientierung als auch Qualität gewährleistet.
 
-Die optionalen Phasen Pilotierung und Monitoring erweitern den Prozess zusätzlich um reale Erprobung und kontinuierliche Weiterentwicklung.
-
-Damit stellt der Makroprozess eine belastbare Grundlage dar, auf der sowohl einzelne Projekte als auch ganze Themenkomplexe nachhaltig aufgebaut und fortgeführt werden können.
+Insgesamt schafft der Makroprozess eine verlässliche Grundlage für die langfristige Arbeit mit einem LLM. Er strukturiert nicht nur die operative Zusammenarbeit, sondern sichert auch deren Ergebnisse und ihre Weiterentwicklung. Damit bildet er das Fundament, auf dem weitere methodische Elemente — wie Mikroprozesse, Rollenprofile, Templates oder Use-Case-spezifische Vorgehensmodelle — systematisch aufgebaut werden können.
 
 ---
 
