@@ -479,45 +479,21 @@ Der Prompt-Autor prüft kurz, ob alles korrekt übertragen wurde und ob die Änd
 
 ## Phase E – Chat-Abschluss
 
-### Ziel der Phase
-
 Die Abschlussphase sorgt dafür, dass ein Chat bewusst beendet und fachlich „geschlossen“ wird. Sie schafft Klarheit darüber, was erreicht wurde, welche Ergebnisse übernommen werden müssen, welche offenen Punkte bleiben und wie der nächste Schritt aussieht. Damit verhindert sie, dass Chats diffus enden oder Aufgaben im Projektverlauf verlorengehen.
 
-Das Ziel dieser Phase ist ein klarer Abschlussblock, der alle relevanten Informationen zusammenfasst und den Übergang in andere Chats, Issues oder Repository-Arbeiten vorbereitet.
+### Ziel der Phase
 
-Hier kommt eine **präzise, gut verständliche und motivierende Begründung**, warum **Phase E – Chat-Abschluss** so wichtig ist.
-Sie fügt sich in Struktur und Tonalität nahtlos in Phase A–D ein.
+Das Ziel dieser Phase ist ein klarer Abschlussblock, der alle relevanten Informationen zusammenfasst und prüft, ob denn tatsächlich alles geregelt wurde, was es zu regeln gab. Somit bereitet diese Phase den Übergang in andere Chats, Issues oder Repository-Arbeiten vor.
 
-Du kannst diesen Abschnitt direkt nach „Ziel der Phase“ einbauen.
+Phase E eignet sich in besonderer Weise dazu, projektbezogene Issues sauber abzuschließen oder systematisch weiterzuführen. Während die vorherigen Phasen darauf ausgerichtet sind, Inhalte zu entwickeln, zu strukturieren und zu sichern, schafft der Abschluss eine Gelegenheit, das Ergebnis des Chats mit den Anforderungen eines offenen Issues abzugleichen. Auf diese Weise wird sichergestellt, dass keine Aufgaben verloren gehen und dass die Arbeit des Chats in der Projektstruktur nachvollziehbar verankert wird.
 
-Relevanz der Phase – Warum der Chat-Abschluss entscheidend ist:
+Das LLM kann hier hilfreich unterstützen, indem es zunächst zusammenfasst, welche Teile eines Issues im Chat tatsächlich bearbeitet und abgeschlossen wurden. Eine solche Zusammenfassung macht auf einen Blick sichtbar, welchen Beitrag der Chat geleistet hat. Anschließend kann der Prompt-Autor das LLM gezielt bitten, das Issue mit dem erarbeiteten Ergebnis zu vergleichen und mögliche offene Punkte herauszufiltern. So wird unmittelbar klar, ob wirklich alle Aufgaben erledigt wurden oder ob einzelne Aspekte bewusst in eine spätere Phase oder in ein neues Issue überführt werden müssen.
 
-* **Der Abschluss verhindert Informationsverlust.**\
-Ohne einen bewussten Abschluss bleiben viele Ergebnisse im Chat „stecken“ – sie sind zwar vorhanden, aber nicht klar benannt, nicht sichtbar und nicht anschlussfähig. Phase E sorgt dafür, dass nichts verloren geht und alles Wesentliche explizit gemacht wird.
+Diese Phase bietet hervorragend die Gelegenheit, Issues fachlich und formal abzuschließen. Der Prompt-Autor kann einen präzisen Abschlusskommentar formulieren, der dokumentiert, was im Chat erreicht wurde, wie das Ergebnis in das Repository einfließt und ob weiterführende Aufgaben bestehen. Gleichzeitig ermöglicht Phase E einen kleinen Qualitätssicherungs-Check: Der Prompt-Autor prüft, ob alle Ziele des Issues erfüllt wurden, ob die Kriterien der Definition of Done eingehalten sind und ob das Ergebnis inhaltlich kohärent zum restlichen Projekt steht.
 
-* **Es entsteht ein eindeutiger Endpunkt.**\
-Viele Chats enden sonst diffus: Das Modell antwortet weniger, der Mensch wechselt das Thema – und plötzlich ist der Chat vorbei, ohne dass klar ist, was wirklich erreicht wurde. Der Abschluss setzt einen klaren Marker: *Dieser Arbeitsschritt ist fertig.*
+Falls im Chat neue Aspekte auftauchen, die nicht Teil des ursprünglichen Issues waren, können sie in dieser Phase klar benannt und in ein neues Issue überführt werden. Dadurch bleibt der Projektfortschritt nachvollziehbar und es entstehen keine „versteckten Aufgaben“, die später nur schwer nachverfolgt werden können.
 
-* **Die Phase schafft Transparenz und Nachvollziehbarkeit.**\
-Durch Zusammenfassung, offene Punkte, Übergaben und nächste Schritte entsteht ein sauberer Überblick. Auch nach mehreren Tagen, Wochen oder bei neuen Projektbeteiligten ist sofort verständlich, was der Chat geleistet hat.
-
-* **Sie sichert die Qualität des Gesamtprozesses.**\
-Der Abschluss zwingt dazu, Ergebnisse zu prüfen und zu strukturieren, bevor sie ins Repository fließen. Dadurch wird der Gesamtprozess konsistent, reproduzierbar und sauber dokumentiert.
-
-* **Phase E schafft Anschlussfähigkeit.**\
-  Nach der Zusammenfassung ist sofort klar:
-  – Was ist erledigt?
-  – Was ist noch offen?
-  – Was passiert als Nächstes?
-  Dadurch werden Folgechats und Issues eindeutig definiert und kein Arbeitsfaden reißt ab.
-
-* **Sie sorgt für Klarheit zwischen Chat-Arbeit und Repository-Arbeit.**\
-Der Abschluss trennt ganz bewusst das „Denken“ (im Chat) vom „Festschreiben“ (im Repository). Erst wenn Phase E abgeschlossen ist, beginnt die Übernahme in Phase D oder ein Folgeauftrag.
-
-* **Sie macht Chats messbar erfolgreich.**\
-Am Ende steht nicht ein Gefühl von „wir haben viel gesprochen“, sondern ein klar dokumentierter Fortschritt. Der Chat war erfolgreich, wenn der Abschlussblock stimmig ist.
-
-Kurz gesagt: Ohne Phase E verliert das Projekt Struktur, ohne Phase E verliert es Anschlussfähigkeit, ohne Phase E verliert es Ergebnisse.
+Durch diese systematische Vorgehensweise wird Phase E zum verbindenden Element zwischen Chat-Arbeit und Projektsteuerung: Sie sorgt dafür, dass Ergebnisse sauber dokumentiert, Issues präzise gepflegt und offene Punkte transparent weitergegeben werden. Ohne diese Phase wäre das Risiko hoch, dass Aufgaben unvollständig abgeschlossen, falsch eingeordnet oder schlicht vergessen werden. In Phase E dagegen wird aus Chat-Arbeit echte Projektarbeit.
 
 
 ### Einstieg / Trigger
