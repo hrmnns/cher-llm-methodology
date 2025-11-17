@@ -31,7 +31,7 @@ Bei langfristiger LLM-Nutzung entstehen leicht Kontextdrift, Wissensverluste, In
 
 ## Inhaltsverzeichnis
 
-- [Executive Summary](#executive-summary)
+- [Prozessbeschreibung](#prozessbeschreibung)
 - [Phase 1 – Vorbereitung](#phase-1--vorbereitung)
 - [Phase 2 – Problemrahmen definieren](#phase-2--problemrahmen-definieren)
 - [Phase 3 – Operative Bearbeitung](#phase-3--operative-bearbeitung)
@@ -44,6 +44,26 @@ Bei langfristiger LLM-Nutzung entstehen leicht Kontextdrift, Wissensverluste, In
   - [Rollenübersicht (prozessübergreifend)](#rollen%C3%BCbersicht-prozess%C3%BCbergreifend)
   - [Visualisierung](#visualisierung)
 - [Zusammenfassung und Fazit](#zusammenfassung-und-fazit)
+
+## Prozessbeschreibung
+
+### Rollenmodell
+
+Der Makroprozess nutzt ein klares Rollenmodell, das über alle Phasen hinweg stabil bleibt.  
+Es definiert Verantwortlichkeiten, Schnittstellen und Zuständigkeiten und ist damit die Grundlage für eine strukturierte Zusammenarbeit.
+
+| Rollenkategorie | Rolle | Beschreibung |
+|-----------------|--------|--------------|
+| **Fachliche Rollen** | Auftraggeber / Projektverantwortlicher | Definiert Ziel, Scope und Prioritäten des Vorhabens. Trifft zentrale Entscheidungen und verantwortet Freigaben. |
+| **Fachliche Rollen** | Fachexperten / Domain Experts | Bringen fachliches Wissen ein, validieren Inhalte und prüfen fachliche Korrektheit der Ergebnisse. |
+| **Methodische Rollen** | LLM-Methodiker | Verantwortet die Gesamtmethodik, strukturiert den Prozess, definiert Qualitätsstandards, Moderation und Konsistenz über alle Phasen hinweg. „Arbeitet an der Methode“. |
+| **Methodische Rollen** | Reviewer | Prüft Inhalte auf Konsistenz, Lesbarkeit, Logik und methodische Qualität. Unterstützt Entscheidungen und Abnahmen. |
+| **Dokumentations- & Strukturrollen** | Dokumentationsverantwortlicher | Persistiert Ergebnisse, pflegt Versionen, aktualisiert Repository-Struktur und stellt langfristige Nachvollziehbarkeit sicher. |
+| **Dokumentations- & Strukturrollen** | Stakeholder | Empfangen Ergebnisse, geben Feedback und bewerten die Anwendbarkeit im eigenen Kontext. |
+| **Erweiterte Rollen (optional)** | Pilotanwender | Testen die Methode oder das Artefakt in realen Anwendungssituationen. Geben praktisches Feedback zur Wirksamkeit. |
+| **Erweiterte Rollen (optional)** | Monitoring-Verantwortlicher | Beobachtet die Methode im langfristigen Einsatz, identifiziert Drift, bewertet Wirksamkeit und leitet Verbesserungen ab. |
+
+### Prozessablauf
 
 ## Phase 1 – Vorbereitung
 
