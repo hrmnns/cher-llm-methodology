@@ -287,103 +287,95 @@ Der Mikroprozess enthält zwei feste Driftpunkte:
 - **Drift-Check vor der Iteration** – Stabilisierung vor dem Arbeiten  
 - **Drift-Check nach dem Entwurf** – Prüfung vor Persistenz
 
-## 7. Korrekturmechanismen bei Drift
+## **7. Korrekturmechanismen bei Drift (überarbeitete Fassung mit Prompt-Beispielen)**
 
-### 7.1 Sofortmaßnahmen
+### **7.1 Sofortmaßnahmen**
 
-- Drift explizit benennen  
-- Klarstellung der betroffenen Stelle  
-- Neuer Bezug zu Repository-Inhalten  
+Sobald Drift erkannt wird, sollte sie direkt angesprochen und eindeutig benannt werden. Dadurch wird klar, worauf sich die Abweichung bezieht und an welcher Stelle eine Korrektur notwendig ist. Anschließend wird die betroffene Passage präzise klargestellt, bevor die Arbeit erneut auf Grundlage der gültigen Repository-Inhalte fortgesetzt wird.
 
-### 7.2 Wiederherstellung des Projektkontextes
+**Prompt-Beispiele:**
 
-- Projektanweisung neu laden  
-- Glossar erneut referenzieren  
-- Zielsetzung korrigieren  
+* *„Wir haben eine Begriffsdrift: Du verwendest gerade ‚Modul‘ statt ‚Methodologie-Baustein‘. Bitte stelle die korrekte Terminologie wieder her.“*
+* *„Bitte korrigiere die letzte Antwort. Die Struktur weicht von der gültigen Kapitelstruktur ab.“*
+* *„Aktualisiere die Formulierung entsprechend der Definition aus dem Repository. Welcher Begriff ist gemäß Glossar korrekt?“*
 
-**Beispiel:**  
-„Wir haben eine leichte Strukturdrift. Bitte stelle die Phasennummerierung gemäß Makroprozess wieder her.“
+### **7.2 Wiederherstellung des Projektkontextes**
+
+Wenn Drift darauf hindeutet, dass das LLM den Projektkontext teilweise verloren hat, wird zunächst die Projektanweisung erneut geladen. Danach erfolgt eine explizite Referenzierung der relevanten Glossar-Einträge, um sicherzustellen, dass Terminologie und Zielsetzung wieder vollständig präsent sind. Diese Rekontextualisierung verhindert, dass die Drift sich weiter verfestigt.
+
+**Prompt-Beispiele:**
+
+* *„Bitte lade die Projektanweisung erneut und bestätige mir anschließend die gültigen Begriffe aus dem Glossar.“*
+* *„Wir haben eine leichte Strukturdrift. Bitte stelle die Phasennummerierung gemäß Makroprozess wieder her.“*
+* *„Aktualisiere deinen Kontext: Das Ziel dieser Arbeitseinheit ist X. Bitte formuliere kurz, wie du dieses Ziel auf Basis des Glossars und der Projektanweisung interpretierst.“*
+
 
 ### 7.3 Rekalibrierung
 
-- Abgleich mit der zuletzt persistierten Version  
-- Neuformulierung fehlerhafter Passagen  
-- Klarere Strukturierung zur Stabilisierung
+Eine Rekalibrierung ist notwendig, wenn eine Drift bereits deutlicher ausgeprägt ist und sich in mehreren Passagen oder Strukturelementen manifestiert hat. Dazu wird der letzte persistierte Stand eines Dokuments erneut geladen, mit der aktuellen Version verglichen und systematisch korrigiert. Fehlerhafte Abschnitte werden neu formuliert, und eine klarere Struktur sorgt dafür, dass die Stabilität wiederhergestellt wird.
+
+**Prompt-Beispiele:**
+
+* *„Bitte vergleiche deine letzte Antwort mit der im Repository gespeicherten Version dieses Abschnitts und korrigiere alle erkennbaren Abweichungen.“*
+* *„Wir haben eine Strukturdrift: Der Aufbau entspricht nicht der persistierten Fassung. Bitte formuliere den Abschnitt neu anhand der gespeicherten Struktur.“*
+* *„Erstelle eine rekalibrierte Version dieses Teils, ausgerichtet an der zuletzt validierten Persistenz.“*
 
 ### 7.4 Reparatur-Workflow
 
-1. Drift identifizieren  
-2. Ursache benennen  
-3. Alle betroffenen Stellen markieren  
-4. Konsistente Neuformulierung  
-5. Reviewer-Prüfung  
-6. Persistenz und Commit  
+Wenn Drift mehrere Teile des Dokuments betrifft oder über längere Zeit unentdeckt geblieben ist, ist ein umfassender Reparaturprozess sinnvoll. Er beginnt damit, die betroffenen Stellen zu identifizieren und die Ursache der Drift klar zu benennen. Danach werden die Inhalte konsistent und vollständig neu formuliert. Abschließend wird die neue Version einer Review-Prüfung unterzogen und anschließend persistiert.
 
-## 8. Beispiel-Workflows
+**Prompt-Beispiele:**
+
+* *„Bitte identifiziere alle Passagen in diesem Abschnitt, die von der persistierten Version abweichen, und markiere sie.“*
+* *„Formuliere alle markierten Stellen neu, orientiert an Glossar, Rollenmodell und Prozessstruktur.“*
+* *„Aktiviere die Rolle des Reviewers und prüfe die Überarbeitung auf Konsistenz, Klarheit und Driftfreiheit.“*
+* *„Bitte gib mir eine final geprüfte Fassung, die ich persistieren kann.“*
+
+
+## 8. Beispiel-Workflows (überarbeitete Fassung)
+
+Beispiel-Workflows helfen dabei, die theoretischen Mechanismen des Drift-Managements im praktischen Projektalltag greifbar zu machen. Die folgenden Szenarien zeigen, wie Drift im operativen Ablauf erkannt und korrigiert wird und an welchen Stellen des Makroprozesses systematische Driftkontrollen erfolgen.
 
 ### 8.1 Drift-Check im operativen Ablauf
 
-**Ablaufbeispiel:**
-
-1. User startet neue Aufgabe  
-2. LLM bestätigt Glossar + Struktur  
-3. Kleine Abweichung wird bemerkt  
-4. LLM korrigiert Terminologie  
-5. Arbeit beginnt erst danach  
+Ein typischer Drift-Check beginnt damit, dass eine neue Aufgabe gestartet wird und das LLM den relevanten Kontext zunächst vollständig rekonstruiert. Es bestätigt die gültigen Begriffe aus dem Glossar und stellt sicher, dass die im Projekt definierten Strukturen weiterhin korrekt angewendet werden. Wenn in diesem frühen Stadium bereits kleine Abweichungen erkennbar sind – etwa eine ungenaue Begriffswahl oder eine veränderte Gliederung –, korrigiert das LLM diese unmittelbar. Erst nachdem Terminologie, Struktur und Rollen eindeutig geklärt wurden, beginnt der eigentliche Arbeitsprozess. Dadurch wird sichergestellt, dass jede Arbeitseinheit auf einer stabilen Grundlage startet.
 
 ### 8.2 Drift-Korrektur im Mikroprozess
 
-**Beispiel:**
-
-Ein Dokument wird überarbeitet und das LLM schlägt plötzlich neue Rollen vor.  
-Vorgehen:
-
-- Rollendrift benennen  
-- bestehende Rollen nachladen  
-- Antwort neu erzeugen  
-- Reviewer prüfen lassen  
-- Persistieren  
+Im Mikroprozess entstehen Driftphänomene häufig dann, wenn ein Dokument aktiv überarbeitet wird. Ein realistisches Beispiel ist der Moment, in dem das LLM unvermittelt neue Rollen vorschlägt oder bestehende Rollen anders interpretiert als vorgesehen. In einem solchen Fall wird die Rollendrift zunächst ausdrücklich benannt, anschließend werden die korrekten Rollen aus der Dokumentation erneut geladen und dem Modell klar zugeordnet. Auf dieser Grundlage wird die betroffene Antwort kontrolliert neu erzeugt. Danach übernimmt die Reviewer-Rolle die Prüfung und gibt die überarbeitete Version frei. Erst im Anschluss wird das Ergebnis im Repository persistiert, sodass die korrigierte Version als neue, stabile Grundlage dient.
 
 ### 8.3 Drift-Prüfung im Makroprozess
 
-Phasenspezifische Driftpunkte:
+Auch im Makroprozess gibt es feste Stellen, an denen Drift systematisch geprüft wird. Bereits in Phase 1 wird sichergestellt, dass alle grundlegenden Begriffe konsistent definiert und klar voneinander abgegrenzt sind. In Phase 2 wird überprüft, ob die strukturellen Achsen des Projekts noch vollständig und korrekt verankert sind. Die iterative Phase 3 enthält fortlaufende Driftkontrollen, damit sich operative Abweichungen erst gar nicht verfestigen. Phase 4 dient der Bereinigung möglicher Widersprüche, die im Verlauf der Arbeit entstanden sind. Schließlich gewährleistet Phase 5, dass die Persistenz selbst als Drift-Schutz fungiert, indem nur geprüfte und konsistente Inhalte dauerhaft im Repository abgelegt werden.
 
-- **Phase 1:** Begriffe stabilisieren  
-- **Phase 2:** Strukturachsen fixieren  
-- **Phase 3:** Iterative Driftkontrolle  
-- **Phase 4:** Widerspruchsbereinigung  
-- **Phase 5:** Drift-Schutz durch Persistenz  
+## 9. Integration in Makro- und Mikroprozess (überarbeitete Fassung)
 
-## 9. Integration in Makro- und Mikroprozess
+Drift-Management wirkt als durchgehendes Querschnittsprinzip innerhalb der gesamten Methodologie. Es begleitet sowohl den Makroprozess als auch den Mikroprozess und trägt entscheidend dazu bei, dass die Struktur und inhaltliche Klarheit eines Projekts über seine gesamte Laufzeit hinweg erhalten bleibt – unabhängig davon, wie umfangreich oder langwierig die Zusammenarbeit ist.
 
-Drift-Management ist ein Querschnittsprinzip.  
-Es sorgt dafür, dass die Methode stabil bleibt – unabhängig davon, wie lange ein Projekt dauert.
+Im Makroprozess stärkt Drift-Management insbesondere die frühen und mittleren Phasen. Bereits in Phase 1 trägt es dazu bei, dass grundlegende Begriffe und Definitionen eindeutig festgelegt und nicht später verwässert werden. In Phase 3 stabilisiert es die operative Zusammenarbeit, indem es verhindert, dass sich während der iterativen Erarbeitung unbemerkte Abweichungen einschleichen. In Phase 5 schließlich sichert es die Persistenz, indem vor der Ablage im Repository noch einmal geprüft wird, dass keine Drift in die Dokumentation übernommen wurde. Damit fungiert der Makroprozess zugleich als Rahmen und als Kontrollinstanz für Driftprävention.
 
-### Im Makroprozess
-- schützt Phase 1 vor unklaren Definitionen,  
-- stabilisiert Phase 3 gegen operative Drift,  
-- sichert Phase 5 als endgültigen Drift-Schutz.
+Im Mikroprozess zeigt sich Drift-Management im täglichen Arbeiten. Drift-Checks zu Beginn jeder Iteration stellen sicher, dass Ziel, Rollen und Struktur korrekt verstanden und umgesetzt werden. Während der Arbeit wird durch klare Rollenwechsel verhindert, dass das LLM unerwartet Aufgabenbereiche vertauscht oder erweitert. Darüber hinaus hilft die regelmäßige Überprüfung der Struktur dabei, Abweichungen frühzeitig zu erkennen und zu korrigieren, bevor sie die Konsistenz des Gesamtprojekts beeinträchtigen können.
 
-### Im Mikroprozess
-- Driftchecks fixieren den Rahmen jeder Iteration,  
-- Rollenwechsel werden kontrolliert,  
-- Strukturabweichungen werden früh erkannt.
+In beiden Prozessen trägt Drift-Management somit wesentlich dazu bei, die methodische Stabilität zu gewährleisten und die Qualität der gemeinsamen Arbeit mit dem LLM dauerhaft hochzuhalten.
 
-## 10. Visualisierungen
-
-Die folgenden Diagramme stellen die zentralen Mechanismen des Drift-Managements visuell dar. Sie können direkt in PlantUML gerendert oder in GitHub mit einem geeigneten Plugin angezeigt werden.
+## 10. Zusammenfassung und Fazit
+Die folgenden Visualisierungen fassen die zentralen Zusammenhänge des Drift-Managements zusammen und dienen als unterstützende Orientierung. Während der Textteil dieses Dokuments die einzelnen Mechanismen im Detail erläutert, ermöglichen die Diagramme einen kompakten, visuellen Überblick darüber, wie Drift entsteht, wie sie erkannt wird und welche Maßnahmen sich daraus ergeben. Sie verdeutlichen, an welchen Stellen der Makro- und Mikroprozess die Driftkontrolle unterstützen und wie die operative Arbeit im Projektverlauf stabil gehalten werden kann.
 
 ### 10.1 Übersicht der Drift-Arten und ihrer Beziehungen
 
-Dieses Diagramm zeigt, wie die verschiedenen Drift-Typen (Begriffs-, Struktur-, Rollen-, Kontextdrift) mit den drei zentralen Maßnahmenbereichen Erkennen, Vermeiden und Korrigieren zusammenhängen. Zudem wird dargestellt, an welchen Stellen Makroprozess, Mikroprozess und die stabilisierenden Repository-Dokumente die Drift-Kontrolle unterstützen.
+Das erste Diagramm zeigt die verschiedenen Formen von Drift und verdeutlicht, wie sie miteinander in Verbindung stehen. Zudem wird sichtbar, dass Drift nicht isoliert betrachtet werden kann, sondern stets im Zusammenspiel mit Erkennen, Vermeiden und Korrigieren verstanden werden muss. Die Grafik macht außerdem deutlich, welche Rolle die definierten Prozesse und die stabilisierenden Dokumente im Repository für die Driftprävention spielen. Sie bietet damit eine kompakte visuelle Zusammenfassung der konzeptionellen Grundlage dieses Dokuments.
 
 ![Drift Management](./data/drift-management.png)
 
-## 10.2 Drift-Workflow (Schritt-für-Schritt)
+### 10.2 Drift-Workflow (Schritt-für-Schritt)
 
-Dieses Diagramm visualisiert den kompletten Ablauf bei der Behandlung von Drift: Vom ersten Hinweis über Diagnose und Klassifikation bis hin zu Korrektur, Validierung und Persistenz. Es dient insbesondere als operativer Leitfaden für Nutzer, Reviewer und Methodiker.
+Das zweite Diagramm zeigt den praktischen Ablauf des Drift-Managements im Projektalltag. Es führt durch alle notwendigen Schritte – vom ersten Hinweis über die Diagnose und Klassifikation bis hin zu Korrektur, Validierung und Persistenz. Diese Darstellung dient als Arbeitsgrundlage für alle Rollen, die an der Steuerung der Qualität beteiligt sind, insbesondere für Methodiker, Reviewer und Strukturgeber. Sie hilft dabei, Drift nicht nur theoretisch zu verstehen, sondern auch im Tagesgeschäft systematisch und nachvollziehbar zu bearbeiten.
 
 ![Drift Workflow](./data/drift-workflow.png)
+
+### 10.3 Fazit
+
+Die Visualisierungen machen deutlich, dass Drift ein natürlicher, aber beherrschbarer Bestandteil der Zusammenarbeit mit LLMs ist. Durch ein strukturiertes Vorgehen, klare Begriffe, verbindliche Prozessschritte und regelmäßige Konsistenzprüfungen lässt sich Drift früh erkennen und dauerhaft vermeiden. Entscheidend ist, dass alle Rollen im Projekt diese Mechanismen konsequent anwenden und dass Ergebnisse zeitnah im Repository gesichert werden. So bleibt auch bei komplexen oder langen Vorhaben gewährleistet, dass die inhaltliche Qualität stabil bleibt und das LLM zuverlässig entlang der definierten Methodologie arbeitet.
 
 ## 11. Weiterführende Dokumente
 - persistence-mechanisms.md  
