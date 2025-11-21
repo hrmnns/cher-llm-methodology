@@ -127,25 +127,137 @@ Das LLM wird gebeten, die wichtigsten Regeln oder Begriffe kurz wiederzugeben.
 - Kontextrekonstruktion: „Was ist der Zustand der Arbeitseinheit?“  
 - Strukturvalidierung: „Bitte fasse die definierte Phasenstruktur zusammen.“
 
-## 5. Regeln zur Driftvermeidung
+## 5. Regeln zur Drift-Vermeidung
+
+Drift zu vermeiden ist wesentlich effektiver als sie im Nachhinein zu korrigieren. Die folgenden Regeln bilden das präventive Fundament des Drift-Managements und greifen an den Stellen an, an denen Drift typischerweise entsteht: bei der Struktur, der Terminologie, den Prompts, den Rollen und der Dokumentation. Durch konsequente Anwendung dieser Regeln bleibt das Projekt über viele Iterationen hinweg stabil und konsistent, unabhängig davon, wie lange oder komplex die Zusammenarbeit mit dem LLM wird.
 
 ### 5.1 Strukturregeln
-- Prozessstrukturen dürfen nur nach expliziter Freigabe geändert werden.
-- Dokumente müssen mit identischen Abschnittslogiken geführt werden.
+
+Die Struktur eines Projekts ist einer der wichtigsten Ankerpunkte gegen Drift. Wenn die definierte Prozess- oder Dokumentstruktur nicht konsequent eingehalten wird, beginnt das Modell sehr schnell, alternative Strukturen zu entwickeln, da es aus Trainingsdaten gelernt hat, Texte kreativ und hilfreich umzugestalten.
+
+#### Was bedeutet das konkret?
+
+* Strukturen dürfen niemals "nebenbei" verändert werden.
+* Änderungen an Dokumenten, Kapiteln oder Tabellen müssen **bewusst**, **explizit** und **dokumentiert** erfolgen.
+* Das Modell muss wissen, welche Struktur *fix* ist und welche Stellen veränderbar sind.
+
+#### Beispiel
+
+Im Makroprozess sind die sechs Kernphasen eindeutig definiert. Wenn das LLM während einer tiefen Erarbeitung beginnt vorzuschlagen:
+
+> „Vielleicht sollten wir zwischen Phase 3 und 4 eine zusätzliche Phase für Feinspezifikation einfügen?“
+
+Dann ist dies **nicht** als „kreativer Vorschlag“ zu sehen, sondern als beginnende **Strukturdrift**, denn Strukturänderungen gehören nicht in eine operative Phase, sondern in ein eigenes Issue und Review.
 
 ### 5.2 Terminologieregeln
-- Keine Synonyme für zentrale Begriffe.  
-- Neue Begriffe nur nach expliziter Definition.
+
+Terminologie ist das Rückgrat der Konsistenz, und driftfreie Begriffe sind entscheidend für ein gemeinsames Verständnis zwischen Mensch und Modell. LLMs tendieren dazu, Synonyme zu nutzen, Varianten einzuführen oder Begriffe semantisch zu erweitern — selbst wenn die ursprünglichen Begriffe präzise definiert wurden.
+
+#### Regelprinzipien
+
+* Kernbegriffe werden ausschließlich in der definierten Form verwendet.
+* Keine Synonyme für definierte Begriffe.
+* Neues Vokabular wird nur dann eingeführt, wenn:
+
+  1. es inhaltlich notwendig ist,
+  2. im Chat explizit begründet wird,
+  3. und anschließend im Glossar persistiert wird.
+
+#### Beispiel
+
+Begriff laut Glossar:
+**„Rollenmodell des LLM“**.
+
+Wenn das Modell später schreibt: „… in unserem *Akteursmodell* unterscheidet das LLM zwischen Reviewer und Methodiker…“, dann entsteht Begriffsdrift, weil „Akteur“ inhaltlich etwas anderes meint. Dieses Problem hätte der **Mini-Glossar-Check** sofort erkannt.
 
 ### 5.3 Prompting-Regeln
-- Jede Arbeitseinheit beginnt mit einem eindeutigen Kontextabriss.  
-- Rollen müssen explizit aktiviert werden.  
-- Themenwechsel müssen angekündigt werden.
 
-### 5.4 Dokumentationsregeln
-- Ergebnisse zeitnah persistieren.  
-- Änderungen müssen nachvollziehbar formuliert werden.  
-- Redundante Inhalte vermeiden oder zentralisieren.
+Die Art und Weise, wie Prompts formuliert werden, hat direkten Einfluss darauf, wie stabil oder drift-anfällig ein Projekt wird. Drift entsteht oft durch unklare oder vage Prompts, die das LLM zu freier Interpretation verleiten.
+
+#### Zentraler Grundsatz
+
+**Jede Arbeitseinheit beginnt mit einer strukturierten Reinitialisierung.**
+
+Das umfasst:
+
+* den Kontext (Was machen wir?)
+* die aktuelle Aufgabe (Was ist der nächste Schritt?)
+* die Rolle (Wie soll das LLM handeln?)
+* die relevanten Dokumente (Worauf stützen wir uns?)
+
+Wechselst du hingegen ohne Vorwarnung zu einem neuen Thema oder lässt wesentliche Kontextanteile weg, interpretiert das Modell mehr als es sollte — Drift entsteht automatisch.
+
+#### Beispiel
+
+Unpräziser Prompt:
+
+> „Kannst du das Kapitel besser formulieren?“
+
+Dies lässt offen:
+
+* welche Rolle aktiv ist,
+* welche Struktur beibehalten werden soll,
+* ob die Terminologie konsistent bleiben muss,
+* ob es um sprachliche Optimierung vs. strukturelle Anpassung geht.
+
+Mit Prompting-Regeln wird daraus:
+
+> „Arbeite als *Reviewer*.
+> Überarbeite **ausschließlich** die sprachliche Klarheit des folgenden Abschnitts,
+> **ohne Struktur**, Begriffe oder Rollen zu verändern.“
+
+Auf diese Weise besteht kein Drift-Risiko.
+
+### 5.4 Rollen- und Verantwortlichkeitsregeln
+
+Rollen sind ein starker Schutzmechanismus gegen Drift. Wenn Rollen präzise eingesetzt und sauber aktiviert werden, bleibt das Modell im definierten Modus und versucht nicht, Aufgaben anderer Rollen zu übernehmen oder neue Rollen auszudenken.
+
+#### Regeln
+
+* Rollenwechsel müssen immer explizit erfolgen.
+* Rollen dürfen nicht implizit vermischt werden.
+* Jede Rolle hat eine klar begrenzte Befugnis.
+* Keine „automatischen“ Rollenentscheidungen durch das Modell.
+
+#### Beispiel
+
+Du arbeitest gerade mit dem LLM als „Methodiker“ an einem Prozessabschnitt. Dann sagst du:
+
+> „Kannst du das anschließend kurz prüfen?“
+
+Das Modell weiß in diesem fall nicht, ob du nun die Rolle des „Reviewers“ aktivieren willst. Es könnte selbstständig den Rollenwechsel vornehmen und beginnen, Inhalte zu bewerten, statt sie zu verbessern.
+
+Die korrekte Variante lautet:
+
+> „Aktiviere Rolle *Reviewer*. Prüfe ausschließlich Konsistenz, ohne den Inhalt umzuschreiben.“
+
+### 5.5 Dokumentations- und Persistenzregeln
+
+Viele Formen von Drift entstehen nicht im Chat, sondern dazwischen — wenn neue Inhalte nicht zeitnah persistiert werden. Je länger Chat-Entwürfe „ungesichert“ bleiben, desto höher das Risiko, dass sie in späteren Phasen wieder verloren gehen oder mit alten Versionen kollidieren.
+
+#### Regeln
+
+* Jede relevante Änderung muss **zeitnah** in das Repository übertragen werden.
+* Zwischenstände dürfen nicht über zu viele Chat-Iterationen hinweg allein im Chat verbleiben.
+* Persistenz erfolgt *immer* vor Kontextwechseln.
+* Entscheidungsgrundlagen müssen dokumentiert werden, nicht nur Ergebnisse.
+
+#### Beispiel
+
+Du überarbeitest im Chat eine große Tabelle zu Drift-Arten. Die neue Fassung bleibt zunächst nur im Chat. Zwei Tage später startest du eine neue Chat-Einheit zum gleichen Thema und referenzierst dein Repository. Das Modell nimmt automatisch die **alte Version** als Grundlage, weil keine persistierte Aktualisierung existiert.
+
+→ Jetzt hast du zwei Versionen im Projekt — idealer Nährboden für Drift.
+
+Mit Persistenzregel:
+
+> „Die aktualisierte Tabelle wurde soeben in `docs/quality/drift-management.md` persistiert.“
+
+Es bleibt alles stabil.
+
+### Kurzfazit zu den Regeln
+
+Drift entsteht überall dort, wo Struktur, Sprache, Rollen oder Dokumentationsstand nicht eindeutig kontrolliert werden. Die Regeln zur Drift-Vermeidung sorgen dafür, dass das LLM **weniger interpretieren** und **mehr reproduzieren** muss — ein zentraler Erfolgsfaktor für langfristige Projekte.
+
 
 ## 6. Routinen zur Konsistenzprüfung
 
