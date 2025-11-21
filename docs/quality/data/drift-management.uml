@@ -1,0 +1,57 @@
+@startuml
+title Drift-Management – Überblick
+
+skinparam rectangle {
+  BackgroundColor #F4F8FF
+  BorderColor #3A4A8F
+  RoundCorner 15
+}
+skinparam arrow {
+  Color #3A4A8F
+  Thickness 1.1
+}
+
+rectangle "Drift-Arten" <<Drift>> {
+  rectangle "Begriffsdrift" as Begriff
+  rectangle "Strukturdrift" as Struktur
+  rectangle "Rollendrift" as Rolle
+  rectangle "Kontextdrift" as Kontext
+}
+
+rectangle "Drift-Phasen" <<Core>> {
+  rectangle "Erkennung\n(Frühindikatoren,\nDiagnose,\nChecklisten)" as Detect
+  rectangle "Vermeidung\n(Regeln,\nStruktur,\nRollen,\nDokumentation)" as Prevent
+  rectangle "Korrektur\n(Rekalibrierung,\nKontextreset,\nPersistenz)" as Correct
+}
+
+rectangle "Prozesseinbettung" <<Process>> {
+  rectangle "Makroprozess\n– Phasen 1–6\n(Definition,\nStrukturierung,\nPersistenz)" as Macro
+  rectangle "Mikroprozess\n– Iterationen\n(Driftchecks,\nRollenaktivierung)" as Micro
+}
+
+rectangle "Stabilisierende Artefakte" <<Docs>> {
+  rectangle "Glossar" as Glossar
+  rectangle "Projektanweisung" as PA
+  rectangle "Persistenz-\nmechanismen" as Persistence
+  rectangle "process-macro.md" as MacroDoc
+}
+
+' Beziehungen
+
+Begriff --> Detect
+Struktur --> Detect
+Rolle --> Detect
+Kontext --> Detect
+
+Detect --> Prevent : führt zu
+Prevent --> Correct : bei Bedarf
+
+Macro --> Prevent : stabilisiert
+Micro --> Detect : erkennt Abweichungen
+
+Glossar --> Prevent
+PA --> Prevent
+Persistence --> Correct
+MacroDoc --> Prevent
+
+@enduml
