@@ -1,0 +1,57 @@
+@startuml
+title Drift-Workflow – Schritt-für-Schritt-Prozess
+
+skinparam rectangle {
+  BackgroundColor #F6FAFF
+  BorderColor #2F4A8A
+  RoundCorner 20
+}
+skinparam arrow {
+  Color #2F4A8A
+  Thickness 1.2
+}
+
+start
+
+:Startpunkt\nNeue Arbeitseinheit\noder laufende Iteration;
+
+:'1. Drift-Indikator erkannt'\n
+- ungewohnte Begriffe\n
+- Rollendrift\n
+- Strukturabweichung\n
+- Kontext wirkt verschoben;
+
+if ("Drift bestätigt?\n(Kurzcheck: Glossar,\nStruktur, Rollen)") then (ja)
+  :2. Drift benennen & klassifizieren\n(Begriffs-, Struktur-, Rollen-, Kontextdrift);
+else (nein)
+  :Weiterarbeiten\nkeine Abweichung;
+  stop
+endif
+
+:3. Ursache analysieren\n
+- Nutzerprompt?\n- fehlende Persistenz?\n- Rollenwechsel?\n- Modellvariation?;
+
+:4. Korrekturmaßnahme auswählen;
+fork
+  :A) Sofortkorrektur\n(kleine Abweichungen)\n- Begriff korrigieren\n- Struktur anpassen;
+fork again
+  :B) Kontext-Reset\n(mittlere Abweichungen)\n- Projektanweisung nachladen\n- Glossar & Struktur referenzieren;
+fork again
+  :C) Rekalibrierung\n(größere Abweichungen)\n- Neuformulierung\n- Abschnitt neu erzeugen;
+fork again
+  :D) Reparaturworkflow\n(umfangreiche Drift)\n1. identifizieren\n2. extrahieren\n3. neu formulieren\n4. reviewen;
+end fork
+
+:5. Ergebnis validieren\n(Reviewer-/Selbstcheck)\n- Terminologie konsistent?\n- Rollen korrekt?\n- Struktur sauber?;
+
+if ("Validierung erfolgreich?") then (ja)
+  :6. Stabilisierung durch Persistenz\n(Ablage im Repository)\n→ schützt vor weiterer Drift;
+else (nein)
+  :Zurück zu Schritt 4\n(Korrektur wiederholen);
+endif
+
+:7. Fortsetzen der Arbeitseinheit\nmit stabilem Kontext;
+
+stop
+
+@enduml
