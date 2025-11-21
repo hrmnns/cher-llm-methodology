@@ -226,14 +226,30 @@ Beispiel:
 - **Konform mit Projektanweisung:** Rollen folgen den Format- und Arbeitsregeln.  
 - **Transparenz:** Rollenwechsel sichtbar und bewusst durchführen.
 
+## 9. Rollen und Artefakte
 
-## 9. Weiterführende Dokumente
+Rollen interagieren mit den zentralen Artefakten der Methodik.  
+Jede Rolle beeinflusst unterschiedliche Artefakt-Typen:
+
+- **LLM-Methodiker:** Projektanweisung, Strukturvorlagen, Prozessrahmen  
+- **Strukturgeber:** Gliederungen, Tabellen, Modelle  
+- **Reviewer:** Reviews, Prüflisten, Konsistenzbewertungen  
+- **Domänenexperte:** fachliche Inhalte, Beispiele, Begriffsklärungen  
+- **Prompt-Engineer:** Steuerprompts, Interaktionsbausteine  
+- **Redaktionsassistent:** sprachliche Optimierungen, Formatierungen  
+
+Diese Zuordnung unterstützt die Strukturierungsachsen des Makroprozesses  
+(z. B. Rollen × Artefakte, Rollen × Phasen) und sorgt für klare Verantwortlichkeiten.
+
+
+## 10. Weiterführende Dokumente
 Verbindungen gemäß Informationsarchitektur:
 
-- `processes/process-macro.md`  
-- `processes/process-micro-chat.md`  
-- `structure/methodology-building-blocks.md`  
+- `processes/process-macro.md`
+- `processes/process-micro-chat.md`
+- `structure/methodology-building-blocks.md`
 - `structure/document-types-and-storage.md`
+
 
 
 ## Weiterführende Dokumente
