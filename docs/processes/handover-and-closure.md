@@ -12,61 +12,97 @@ Ziel ist eine **reproduzierbare, konsistente und klare Übergabestruktur**, die 
 
 ## 1. Regeln für den Chat-Abschluss
 
-Ein Chat gilt als **abgeschlossen**, wenn folgende Bedingungen erfüllt sind:
+Der Abschluss eines Chats markiert den formalen Endpunkt einer Arbeitseinheit im Mikroprozess. Damit dieser Übergang sauber, nachvollziehbar und anschlussfähig erfolgt, müssen bestimmte Kriterien erfüllt und definierte Schritte durchgeführt werden. Die folgenden Unterabschnitte erläutern, wie ein Chat korrekt abgeschlossen wird und welche Gründe zu einem Abschluss führen können.
+
 
 ### 1.1 Abschlusskriterien
-- Die Fragestellung oder Aufgabe ist **in der aktuellen Iteration vollständig beantwortet**.  
-- Alle relevanten Ergebnisse liegen in **strukturierter Form** vor (Tabellen, Listen, Modelle).  
-- **Offene Punkte** sind klar markiert und als Issues vorgeschlagen.  
-- Eine **Übergabe oder Persistenz** ist vorbereitet (siehe Templates).  
-- Es ist klar definiert, **wie und in welcher Form weitergearbeitet wird**.
+
+Bevor ein Chat beendet wird, sollte geprüft werden, ob die fachliche und strukturelle Arbeit tatsächlich abgeschlossen ist. Ein Chat gilt als beendet, wenn die Kernfrage beantwortet, die Ergebnisse vollständig erarbeitet und die Anschlussarbeiten eindeutig vorbereitet sind. Typischerweise ist das der Fall, wenn:
+
+* die Fragestellung oder Aufgabe in der aktuellen Iteration vollständig beantwortet wurde,
+* alle relevanten Ergebnisse in strukturierter Form vorliegen (z. B. Tabellen, Listen oder Modelle),
+* offene Punkte klar markiert und idealerweise bereits als Issues vorgeschlagen wurden,
+* eine Übergabe oder Persistenz vorbereitet ist (siehe Templates),
+* und klar definiert ist, wie und in welcher Form weitergearbeitet wird.
 
 ### 1.2 Pflichtschritte beim Abschluss
-- Kurze **Zusammenfassung des Erreichten**  
-- Formulierung der **konkreten offenen Punkte**  
-- **Empfehlung für den nächsten Schritt** (weiter im Chat, neuer Chat, Issue, Persistenz)  
-- **Verweis auf betroffene Dokumente** im Repository  
-- Falls relevant: kurze **Risiko-/Konsistenzprüfung**
+
+Der Abschluss ist nicht nur eine inhaltliche, sondern auch eine methodische Handlung. Damit Ergebnisse für Folgeprozesse (z. B. Persistenz, neue Chats, Issues) nutzbar bleiben, müssen bestimmte Schritte durchgeführt werden. Jeder Chat-Abschluss umfasst daher:
+
+* eine kurze Zusammenfassung des Erreichten,
+* eine klare Formulierung der offenen Punkte,
+* eine Empfehlung für den nächsten Schritt (weiter im gleichen Chat, neuer Chat, neues Issue, Persistenz),
+* einen Verweis auf betroffene Dokumente oder Speicherorte im Repository,
+* und – falls relevant – eine kurze Risiko- oder Konsistenzprüfung.
+
+Diese Pflichtschritte sichern die Anschlussfähigkeit und verhindern Informationsverlust.
 
 ### 1.3 Gründe für den Abschluss
-- Ende einer Mikroprozess-Einheit  
-- Übergang zwischen Makroprozessphasen  
-- Abstraktionswechsel / Strukturwechsel  
-- Output ist „gut genug“ für Persistenz oder Konsolidierung  
-- Vermeidung unnötiger Chat-Länge  
+
+Es gibt unterschiedliche Anlässe, an denen ein Chat sinnvoll abgeschlossen werden sollte. Ein Abschluss erfolgt nicht nur, wenn alle Inhalte final sind, sondern auch, wenn ein methodischer oder struktureller Übergang bevorsteht. Typische Gründe sind:
+
+* das Ende einer Mikroprozess-Einheit,
+* der Übergang zwischen zwei Makroprozessphasen,
+* ein Wechsel der Abstraktionsebene oder ein struktureller Sprung (z. B. Wechsel in ein anderes Kapitel),
+* ein Ergebnis ist „gut genug“ für Persistenz oder Konsolidierung,
+* oder die Vermeidung unnötiger Chat-Länge und damit verbundener Kontextdrift.
+
+Der Abschluss dient also sowohl der inhaltlichen Sauberkeit als auch der methodischen Stabilität.
 
 ## 2. Kriterien für „Neuer Chat notwendig“
 
-Ein neuer Chat ist notwendig, wenn mindestens einer der folgenden Punkte zutrifft:
+Ein neuer Chat wird immer dann erforderlich, wenn die aktuelle Unterhaltung ihre funktionale Grenze erreicht hat – sei es inhaltlich, strukturell oder technisch. Ziel ist es, Kontextdrift zu vermeiden, klare methodische Übergänge einzuhalten und den Arbeitsfluss sauber zu strukturieren. Die folgenden Kategorien erläutern, wann ein Neustart sinnvoll oder sogar zwingend notwendig ist.
 
 ### 2.1 Inhaltliche Kriterien
-- **Kontextdrift** erkennbar  
-- Themen- oder Aufgabenwechsel  
-- Wechsel der Granularität („Wechsel in ein anderes Kapitel“, „andere Ebene“)
+
+Diese Kriterien greifen, wenn sich der fachliche Inhalt soweit verändert, dass der laufende Chat nicht mehr den passenden Rahmen bietet. Ein neuer Chat ist notwendig, wenn:
+
+* eine deutliche Kontextdrift erkennbar wird,
+* ein Themen- oder Aufgabenwechsel erfolgt,
+* oder die Granularität wechselt (z. B. von einer Gesamtübersicht zu einem tiefen Detailkapitel oder umgekehrt).
+
+Ein Neustart stellt in diesen Fällen sicher, dass der neue Fokus klar und ohne Altlasten verfolgt werden kann.
 
 ### 2.2 Strukturelle Kriterien
-- Start einer **neuen Prozessphase** (Makroprozess)  
-- Wechsel der Rolle des LLM (z. B. Methodiker → Reviewer)  
-- Wechsel des Arbeitsmodus (Brainstorming → Konsolidierung)  
-- Die Projektanweisung wäre andernfalls überlastet
+
+Hier geht es um methodische Wechsel, bei denen der laufende Chat seine Funktion verliert. Ein neuer Chat sollte begonnen werden, wenn:
+
+* eine neue Prozessphase im Makroprozess startet,
+* die Rolle des LLM wechselt (z. B. von Methodiker zu Reviewer),
+* der Arbeitsmodus sich verändert (Brainstorming → Konsolidierung),
+* oder die Projektanweisung sonst überladen würde.
+
+Ein neuer Chat schafft in diesen Situationen einen klaren methodischen Rahmen und hält die Struktur stabil.
 
 ### 2.3 Technische/Pragmatische Kriterien
-- Chat wurde sehr lang  
-- Die Übersicht geht verloren  
-- Ein Teilprozess soll sauber abgegrenzt dokumentiert werden  
-- Ein strukturiertes Ergebnis soll „frisch“ erzeugt werden
+
+Manchmal ist ein neuer Chat weniger aus inhaltlichen Gründen erforderlich, sondern aus Gründen der Übersichtlichkeit oder technischen Begrenzung. Ein neuer Chat ist ratsam, wenn:
+
+* der Chat sehr lang geworden ist,
+* die Übersicht verloren geht,
+* ein Teilprozess sauber abgegrenzt dokumentiert werden soll,
+* oder ein strukturiertes Ergebnis bewusst „frisch“ erzeugt werden soll.
+
+Damit bleibt der Arbeitsverlauf klar, und Ergebnisse werden nicht in langen Chatverläufen „versteckt“.
 
 ### 2.4 Absolute Grenzen
-- Wenn ein Zwischenstand ins Repository geschrieben wurde → neuer Chat  
-- Wenn ein anderer Mensch übernimmt → neuer Chat  
-- Wenn ein Issue geschlossen/eröffnet wird → idealerweise neuer Chat  
+
+Diese Kriterien erzwingen einen neuen Chat. Sobald eine dieser Situationen eintritt, darf im alten Chat nicht weitergearbeitet werden:
+
+* Wenn ein Zwischenstand ins Repository geschrieben wurde → neuer Chat.
+* Wenn eine andere Person übernimmt → neuer Chat.
+* Wenn ein Issue geschlossen oder eröffnet wird → idealerweise neuer Chat, um einen sauberen Übergabe- und Startpunkt zu setzen.
+
+Diese Grenzen verhindern, dass Persistenz, Verantwortlichkeiten oder Arbeitsphasen ineinanderlaufen.
 
 
 ## 3. Übergabevorlagen (Handover-Templates)
 
-Diese Templates werden **am Ende eines Chats** genutzt oder können als **erster Beitrag eines neuen Chats** eingefügt werden.
+Die folgenden Templates dienen dazu, Übergaben klar, vollständig und strukturiert zu gestalten. Sie kommen immer dann zum Einsatz, wenn eine Arbeitseinheit endet und eine neue beginnt, sei es innerhalb eines Chats, zwischen Chats, beim Anlegen eines Issues oder beim Überführen von Ergebnissen ins Repository.
 
 ### 3.1 Template: Übergabe an neuen Chat
+
+Dieses Template wird genutzt, wenn ein neuer Chat gestartet werden soll, um Kontext sauber zu übergeben — z. B. nach einem Themenwechsel, einer abgeschlossenen Mikroprozess-Einheit oder zur Vermeidung von Kontextdrift. Es fasst den bisherigen Stand zusammen und bereitet den nächsten Chat so vor, dass er direkt anschlussfähig weiterarbeiten kann.
 
 ```
 # Handover an neuen Chat
@@ -92,6 +128,8 @@ Diese Templates werden **am Ende eines Chats** genutzt oder können als **erster
 
 ### 3.2 Template: Übergabe an neues Issue
 
+Dieses Template wird verwendet, wenn eine Aufgabe aus dem Chat heraus in ein GitHub-Issue überführt werden soll — typischerweise bei klar abgrenzbaren Teilaufgaben, offenen Punkten, Persistenzschritten oder Entscheidungen, die nicht im Chat selbst bearbeitet werden sollen. Es dient als vollständige, strukturierte Beschreibung für das Issue.
+
 ```
 # Übergabe an Issue
 
@@ -114,6 +152,8 @@ Diese Templates werden **am Ende eines Chats** genutzt oder können als **erster
 
 
 ### 3.3 Template: Übergabe an Repository / Persistenz
+
+Dieses Template kommt zum Einsatz, wenn Ergebnisse endgültig in das Repository übertragen werden sollen — also bei konsolidierten Inhalten, überarbeiteten Dokumenten oder stabilen Zwischenständen. Es stellt sicher, dass der Persistenzschritt vollständig nachvollziehbar ist und strukturiert ausgeführt wird.
 
 ```
 # Übergabe zur Persistenz (Repository)
@@ -139,6 +179,8 @@ Diese Templates werden **am Ende eines Chats** genutzt oder können als **erster
 ```
 
 ### 3.4 Template: Übergabe an Person/Rolle
+
+Dieses Template wird genutzt, wenn eine Aufgabe an eine spezifische Person oder Rolle übergeben wird — etwa für Reviews, fachliche Klärungen, strukturelle Ergänzungen oder Persistenzschritte. Es stellt sicher, dass die empfangende Person alle notwendigen Informationen sofort vorliegen hat.
 
 ```
 # Übergabe an Rolle/Person
