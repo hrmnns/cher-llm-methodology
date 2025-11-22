@@ -78,7 +78,7 @@ ALOT2COME soll es ermöglichen:
 
 ## 📘 Weiterführende Dokumentation
 
-Eine ausführliche Darstellung von Methode und Framework findet sich im [(Wiki)](https://github.com/hrmnns/cher-alot2come/wiki).
+Eine ausführliche Darstellung von Methode und Framework findet sich im [Wiki](https://github.com/hrmnns/cher-alot2come/wiki).
 
 ## ✨ Status
 
